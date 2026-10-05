@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Shop Black Crack Seasoning & Merch | Chef Jay LeSoul</title>
+<meta name="description" content="Black Crack Seasoning — bold, garlicky, addictive. Shop the Jay LeSoul collection: seasoning, cookbook, kitchen utensils, aprons, chef hats and gift sets.">
+<meta name="theme-color" content="#0a0a0a">
+<link rel="icon" href="assets/images/fav.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Mr+Dafoe&family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<style>
+/* =========================================================
+   CHEF JAY LeSOUL — SHOP / BLACK CRACK  (shares the home-page system)
+   ========================================================= */
+:root{
+  --u:clamp(.5px, calc(100vw / 1024), 1.6px);
+  --black:#0a0a0a;--red:#c8102e;--red-d:#8a0a1d;--gold:#d4af37;--gold-l:#f3d77a;
+  --kraft:#e8dbc0;--kraft-d:#cdbb94;--cream:#f4ead6;
+  --goldgrad:linear-gradient(135deg,#8a6512 0%,#d4af37 24%,#fff0b0 48%,#d4af37 70%,#8a6512 100%);
+  --kraftgrad:linear-gradient(160deg,#f2e7cf 0%,#e4d6b8 55%,#d6c49e 100%);
+  --f-disp:'Anton',Impact,sans-serif;--f-head:'Oswald',sans-serif;--f-script:'Mr Dafoe',cursive;--f-body:'Poppins',system-ui,sans-serif;
+  --hh:calc(88*var(--u));--ease:cubic-bezier(.2,.75,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--f-body);background:var(--black);color:#eee;overflow-x:hidden;line-height:1.4}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;border:0;background:none;cursor:pointer}
+.stage{position:relative;margin:0 auto}
+
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--goldgrad);z-index:1000}
+.to-top{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;background:var(--goldgrad);color:#1a1200;display:grid;place-items:center;font-size:20px;font-weight:700;box-shadow:0 10px 25px rgba(0,0,0,.35);opacity:0;visibility:hidden;transform:translateY(20px);transition:.4s var(--ease);z-index:800}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none!important}}
+
+/* ---------- buttons ---------- */
+.btn-red{display:inline-flex;align-items:center;justify-content:center;gap:calc(10*var(--u));background:linear-gradient(180deg,#dc1331,#9c0a21);color:#fff;font-family:var(--f-head);font-weight:500;letter-spacing:.05em;text-transform:uppercase;box-shadow:inset 0 0 0 1.5px rgba(245,205,110,.75),0 6px 16px rgba(200,16,46,.35);transition:transform .3s var(--ease),box-shadow .3s,filter .3s;white-space:nowrap}
+.btn-red:hover{transform:translateY(-2px);filter:brightness(1.08);box-shadow:inset 0 0 0 1.5px var(--gold-l),0 10px 24px rgba(200,16,46,.45)}
+.btn-goldfill{display:inline-flex;align-items:center;justify-content:center;gap:calc(12*var(--u));background:var(--goldgrad);background-size:200% auto;color:#2a1a00;font-family:var(--f-head);font-weight:600;letter-spacing:.05em;text-transform:uppercase;box-shadow:0 8px 20px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.45);transition:transform .3s var(--ease);animation:shine 5s linear infinite;white-space:nowrap}
+.btn-goldfill:hover{transform:translateY(-2px)}
+@keyframes shine{to{background-position:200% center}}
+.chev{width:.55em;height:.9em;flex-shrink:0;transition:transform .3s}
+.chev path{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+a:hover>.chev{transform:translateX(3px)}
+
+/* ---------- logo ---------- */
+.logo{display:inline-flex;flex-direction:column;align-items:flex-start;font-size:calc(var(--s)*var(--u));line-height:1;flex-shrink:0}
+.l-top{display:flex;align-items:flex-end;gap:.1em;height:.72em;margin-left:.45em}
+.l-top small{font-family:var(--f-head);font-weight:600;font-size:.27em;letter-spacing:.08em;color:var(--gold);margin-bottom:.06em}
+.l-hat{width:.55em;height:.95em;margin-bottom:4px;margin-left:-42px}
+.l-main{display:flex;gap:.1em;font-family:var(--f-disp);font-size:1em;letter-spacing:-.005em;line-height:1}
+.l-main b{font-weight:400;color:#fff}
+.l-main i{font-style:normal;color:var(--red);-webkit-text-stroke:.01em rgba(243,215,122,.55)}
+.l-sub{font-family:var(--f-head);font-weight:500;font-size:.22em;letter-spacing:1em;color:var(--gold);margin:.35em 0 0 1em}
+.hat-o{fill:none;stroke:url(#goldGrad);stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- header ---------- */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--hh);background:#0a0a0a;transition:box-shadow .3s}
+.site-header.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.55)}
+.header-inner{display:flex;justify-content:space-between;align-items:center;height:100%;padding:0 calc(39*var(--u)) 0 calc(40*var(--u))}
+.site-header .logo{width:calc(182*var(--u))}
+.nav{display:flex;align-items:center;margin-left:calc(60*var(--u))}
+.nav-list{display:flex;gap:calc(20*var(--u))}
+.nav-list a{position:relative;display:block;padding:calc(6*var(--u)) 0;font-family:var(--f-head);font-weight:500;font-size:calc(12.3*var(--u));letter-spacing:.03em;text-transform:uppercase;color:#fff;transition:color .3s}
+.nav-list a::after{content:"";position:absolute;left:0;bottom:calc(-5*var(--u));height:calc(2*var(--u));width:0;background:var(--goldgrad);transition:width .35s var(--ease)}
+.nav-list a:hover,.nav-list a.active{color:#e2b64b}
+.nav-list a:hover::after,.nav-list a.active::after{width:100%}
+.nav-cta{display:none}
+.header-cta{margin-left:auto;width:calc(117*var(--u));height:calc(36*var(--u));border-radius:calc(5*var(--u));font-size:calc(13.5*var(--u))}
+.nav-toggle{display:none;width:44px;height:44px;flex-direction:column;justify-content:center;align-items:center;gap:6px;border-radius:10px;border:1px solid rgba(212,175,55,.4)}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--gold);transition:.35s var(--ease)}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.nav-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:890;opacity:0;visibility:hidden;transition:.4s}
+.nav-backdrop.show{opacity:1;visibility:visible}
+body.nav-lock{overflow:hidden}
+
+/* =========================================================
+   SHOP HERO — dark, smoky, kraft & gold
+   ========================================================= */
+.shero{position:relative;margin-top:var(--hh);overflow:hidden;color:#fff;
+  background:radial-gradient(ellipse at 75% 40%,#2a1a0a 0%,rgba(10,10,10,0) 45%),radial-gradient(ellipse at 10% 90%,#1a1206 0%,rgba(10,10,10,0) 40%),#0b0b0b}
+.shero::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(115deg,transparent 0 46px,rgba(255,255,255,.02) 46px 48px)}
+.shero .stage{display:grid;grid-template-columns:calc(470*var(--u)) 1fr;gap:calc(30*var(--u));align-items:center;padding:calc(40*var(--u)) calc(40*var(--u)) calc(60*var(--u)) calc(44*var(--u));position:relative;z-index:2}
+.shero-streak{position:absolute;top:0;bottom:0;left:calc(420*var(--u));width:calc(260*var(--u));z-index:1;pointer-events:none;overflow:visible;opacity:.5;height: 100%;}
+.shero-swoosh{position:absolute;left:0;bottom:0;width:calc(430*var(--u));height:calc(56*var(--u));z-index:1;pointer-events:none}
+
+.eyebrow{display:inline-flex;align-items:center;gap:calc(10*var(--u));font-family:var(--f-head);font-weight:600;font-size:calc(12*var(--u));letter-spacing:.42em;color:var(--gold);text-transform:uppercase}
+.eyebrow::before{content:"";width:calc(34*var(--u));height:calc(3*var(--u));border-radius:3px;background:var(--goldgrad)}
+.shero h1{margin-top:calc(12*var(--u));font-family:var(--f-disp);font-weight:400;font-size:calc(56*var(--u));line-height:.96;letter-spacing:.005em;color:var(--cream);text-shadow:0 3px 10px rgba(0,0,0,.6)}
+.shero h1 em{display:block;font-style:normal;font-family:var(--f-script);font-size:calc(74*var(--u));line-height:1;color:#e0203f;transform:rotate(-3deg);transform-origin:left center;text-shadow:0 3px 8px rgba(0,0,0,.6);margin-top:calc(4*var(--u))}
+.shero-sub{margin-top:calc(22*var(--u));font-family:var(--f-head);font-weight:600;font-size:calc(19*var(--u));letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.shero-script{display:block;margin-top:calc(4*var(--u));font-family:var(--f-script);font-size:calc(40*var(--u));line-height:1.1;color:var(--gold-l)}
+.shero-script b{font-family:var(--f-disp);font-weight:400;font-size:.85em;letter-spacing:.02em;background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.shero-copy{margin-top:calc(16*var(--u));max-width:calc(430*var(--u));font-size:calc(14.5*var(--u));font-weight:300;line-height:1.6;color:#d8d8d8}
+.shero-btns{display:flex;flex-wrap:wrap;gap:calc(14*var(--u));margin-top:calc(26*var(--u))}
+.shero-btns .btn-red,.shero-btns .btn-goldfill{height:calc(46*var(--u));padding:0 calc(28*var(--u));border-radius:calc(6*var(--u));font-size:calc(15*var(--u))}
+
+/* hero art: chef illustration + bottle + badge */
+.shero-art{position:relative;justify-self:end;width:calc(470*var(--u));height:calc(400*var(--u))}
+.art-main{position:absolute;right:0;top:0;width:calc(360*var(--u));height:calc(400*var(--u));overflow:hidden;clip-path:polygon(0 0,86% 0,100% 12%,100% 100%,14% 100%,0 88%);background:#1a1a1a;box-shadow:0 20px 50px rgba(0,0,0,.6)}
+.art-main img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.art-main::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 calc(3*var(--u)) rgba(212,175,55,.75)}
+.art-bottle{position:absolute;left:0;bottom:calc(-10*var(--u));width:calc(170*var(--u));filter:drop-shadow(0 18px 30px rgba(0,0,0,.7));animation:float 6s ease-in-out infinite;z-index:3}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-10px) rotate(-1deg)}}
+.art-badge{position:absolute;right:calc(-12*var(--u));bottom:calc(16*var(--u));width:calc(104*var(--u));height:calc(104*var(--u));border-radius:50%;display:grid;place-items:center;text-align:center;background:var(--cream);color:#111;box-shadow:0 0 0 calc(3*var(--u)) #111,0 0 0 calc(6*var(--u)) var(--gold),0 14px 30px rgba(0,0,0,.6);transform:rotate(-8deg);z-index:4}
+.art-badge span{font-family:var(--f-head);font-weight:700;font-size:calc(11*var(--u));letter-spacing:.14em;text-transform:uppercase;line-height:1.1}
+.art-badge b{display:block;font-family:var(--f-script);font-weight:400;font-size:calc(34*var(--u));line-height:1;color:var(--red)}
+.art-tag{position:absolute;left:calc(150*var(--u));bottom:calc(-6*var(--u));padding:calc(10*var(--u)) calc(16*var(--u));background:var(--goldgrad);color:#1a1200;font-family:var(--f-head);font-weight:700;font-size:calc(12.5*var(--u));letter-spacing:.1em;text-transform:uppercase;line-height:1.3;clip-path:polygon(0 0,100% 0,96% 100%,4% 100%);box-shadow:0 10px 24px rgba(0,0,0,.5);z-index:3}
+.p-acc{position:absolute;width:0;height:0;pointer-events:none;z-index:2}
+.p-red{top:calc(-14*var(--u));right:calc(40*var(--u));border-left:calc(28*var(--u)) solid transparent;border-right:calc(28*var(--u)) solid transparent;border-top:calc(48*var(--u)) solid #c8102e;filter:drop-shadow(0 6px 10px rgba(200,16,46,.4))}
+.p-gold{top:calc(120*var(--u));left:calc(96*var(--u));border-left:calc(18*var(--u)) solid transparent;border-right:calc(18*var(--u)) solid transparent;border-bottom:calc(30*var(--u)) solid #d4af37;filter:drop-shadow(0 4px 8px rgba(212,175,55,.5))}
+
+/* =========================================================
+   SHOP THE COLLECTION
+   ========================================================= */
+.shop{position:relative;background:#0e0e0e;color:#111;border-top:1px solid rgba(212,175,55,.3)}
+.shop-head{display:flex;align-items:center;gap:calc(18*var(--u));padding:calc(26*var(--u)) calc(44*var(--u)) calc(18*var(--u))}
+.shop-head i{flex:1;height:calc(3*var(--u));border-radius:3px;background:var(--goldgrad)}
+.shop-head h2{font-family:var(--f-disp);font-weight:400;font-size:calc(34*var(--u));letter-spacing:.08em;color:var(--cream);text-shadow:0 3px 10px rgba(0,0,0,.6)}
+.shop-head h2 em{font-style:normal;color:var(--red)}
+.p-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:calc(8*var(--u));padding:0 calc(22*var(--u)) calc(30*var(--u))}
+.p-card{position:relative;display:flex;flex-direction:column;background:var(--kraftgrad);border-radius:calc(3*var(--u));overflow:hidden;box-shadow:0 10px 26px rgba(0,0,0,.45),inset 0 0 0 1px rgba(255,255,255,.35);transition:transform .45s var(--ease),box-shadow .45s}
+.p-card::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,0) 0 3px,rgba(0,0,0,.015) 3px 4px),repeating-linear-gradient(90deg,rgba(0,0,0,0) 0 5px,rgba(0,0,0,.012) 5px 6px)}
+.p-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.6),inset 0 0 0 2px var(--gold)}
+.p-img{position:relative;display:grid;place-items:center;padding:calc(14*var(--u));background:radial-gradient(ellipse at 50% 85%,rgba(0,0,0,.18),transparent 60%)}
+.p-img img{max-height:100%;width:auto;max-width:100%;object-fit:contain;filter:drop-shadow(0 12px 16px rgba(0,0,0,.35));transition:transform .6s var(--ease)}
+.p-card:hover .p-img img{transform:scale(1.06)}
+.p-tag{position:absolute;top:calc(10*var(--u));left:calc(10*var(--u));padding:calc(3*var(--u)) calc(8*var(--u));font-family:var(--f-head);font-weight:700;font-size:calc(9.5*var(--u));letter-spacing:.12em;text-transform:uppercase;color:#fff;background:var(--red);clip-path:polygon(0 0,100% 0,92% 100%,0 100%)}
+.p-body{display:flex;flex-direction:column;flex:1;padding:calc(10*var(--u)) calc(12*var(--u)) calc(14*var(--u));text-align:center;border-top:1px dashed rgba(0,0,0,.18)}
+.p-body h3{font-family:var(--f-head);font-weight:700;font-size:calc(14.5*var(--u));letter-spacing:.04em;text-transform:uppercase;color:#111;line-height:1.15}
+.p-body p{margin-top:calc(6*var(--u));font-size:calc(11.6*var(--u));font-weight:400;line-height:1.4;color:#3b3225;flex:1}
+.p-price{margin-top:calc(8*var(--u));font-family:var(--f-disp);font-weight:400;font-size:calc(20*var(--u));color:var(--red);letter-spacing:.02em}
+.p-price small{font-family:var(--f-head);font-weight:500;font-size:calc(10*var(--u));letter-spacing:.1em;text-transform:uppercase;color:#6b5a3a;margin-left:.3em}
+.p-buy{display:inline-flex;align-items:center;justify-content:center;gap:calc(8*var(--u));width:100%;height:calc(34*var(--u));margin-top:calc(10*var(--u));border-radius:calc(3*var(--u));background:linear-gradient(180deg,#dc1331,#9c0a21);color:#fff;font-family:var(--f-head);font-weight:600;font-size:calc(12*var(--u));letter-spacing:.1em;text-transform:uppercase;box-shadow:inset 0 0 0 1px rgba(245,205,110,.55),0 4px 10px rgba(0,0,0,.3);transition:transform .3s var(--ease),filter .3s}
+.p-buy:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.p-buy svg{width:calc(14*var(--u));height:calc(14*var(--u))}
+
+/* =========================================================
+   VIDEO — see it in action
+   ========================================================= */
+.vid{position:relative;overflow:hidden;color:#fff;background:radial-gradient(ellipse at 20% 50%,#241808 0%,rgba(10,10,10,0) 50%),#0b0b0b;border-top:1px solid rgba(212,175,55,.25)}
+.vid .stage{display:grid;grid-template-columns:calc(380*var(--u)) 1fr;gap:calc(34*var(--u));align-items:center;padding:calc(40*var(--u)) calc(44*var(--u)) calc(46*var(--u))}
+.vid h2{font-family:var(--f-disp);font-weight:400;font-size:calc(38*var(--u));line-height:.98;color:var(--cream)}
+.vid h2 em{font-style:normal;color:var(--red)}
+.vid .scr{display:block;margin:calc(6*var(--u)) 0 0 calc(4*var(--u));font-family:var(--f-script);font-size:calc(34*var(--u));line-height:1;color:var(--gold-l);transform:rotate(-2deg);transform-origin:left center}
+.vid p{margin-top:calc(16*var(--u));font-size:calc(14.5*var(--u));font-weight:300;line-height:1.6;color:#d8d8d8}
+.uses{display:grid;grid-template-columns:1fr 1fr;gap:calc(8*var(--u)) calc(14*var(--u));margin-top:calc(16*var(--u))}
+.uses li{display:flex;align-items:center;gap:calc(8*var(--u));font-family:var(--f-head);font-weight:500;font-size:calc(13.5*var(--u));letter-spacing:.06em;text-transform:uppercase;color:#fff}
+.uses li::before{content:"";width:calc(9*var(--u));height:calc(9*var(--u));border-radius:50%;background:var(--goldgrad);flex-shrink:0}
+.vid .btn-red{height:calc(44*var(--u));padding:0 calc(26*var(--u));margin-top:calc(22*var(--u));border-radius:calc(6*var(--u));font-size:calc(14.5*var(--u))}
+.vid-frame{position:relative;aspect-ratio:16/10;background:#000;clip-path:polygon(0 0,90% 0,100% 14%,100% 100%,10% 100%,0 86%);box-shadow:0 24px 60px rgba(0,0,0,.7)}
+.vid-frame::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 calc(3*var(--u)) rgba(212,175,55,.8)}
+.vid-frame video{width:100%;height:100%;object-fit:cover;display:block}
+.vid-badge{position:absolute;left:calc(0*var(--u));top:calc(0*var(--u));padding:calc(8*var(--u)) calc(14*var(--u));background:var(--goldgrad);color:#1a1200;font-family:var(--f-head);font-weight:700;font-size:calc(12*var(--u));letter-spacing:.14em;text-transform:uppercase;clip-path:polygon(0 0,100% 0,95% 100%,5% 100%);box-shadow:0 10px 24px rgba(0,0,0,.5);z-index:2}
+
+/* =========================================================
+   CATERING BAND — like the reference bottom
+   ========================================================= */
+.cater{position:relative;overflow:hidden;color:#fff;background:#0b0b0b;border-top:1px solid rgba(212,175,55,.3)}
+.cater .stage{display:grid;grid-template-columns:calc(300*var(--u)) 1fr calc(260*var(--u));align-items:stretch;min-height:calc(290*var(--u))}
+.cat-copy{position:relative;z-index:2;padding:calc(34*var(--u)) 0 calc(34*var(--u)) calc(44*var(--u))}
+.cat-copy h2{font-family:var(--f-disp);font-weight:400;font-size:calc(42*var(--u));line-height:.9;color:var(--cream)}
+.cat-copy h2 em{display:block;font-style:normal;font-family:var(--f-script);font-size:calc(50*var(--u));line-height:1;color:#e0203f;transform:rotate(-3deg);transform-origin:left center;margin-top:calc(2*var(--u))}
+.cat-copy p{margin-top:calc(14*var(--u));font-size:calc(14*var(--u));font-weight:400;line-height:1.5;color:#e8e8e8}
+.cat-list{display:grid;grid-template-columns:1fr 1fr;gap:calc(8*var(--u)) calc(12*var(--u));margin-top:calc(14*var(--u))}
+.cat-list li{display:flex;align-items:center;gap:calc(8*var(--u));font-size:calc(13*var(--u));color:#fff}
+.cat-list li i{display:grid;place-items:center;width:calc(18*var(--u));height:calc(18*var(--u));border-radius:50%;background:var(--goldgrad);flex-shrink:0}
+.cat-list li i svg{width:60%;height:60%}
+.cat-media{position:relative;overflow:hidden}
+.cat-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.cat-media::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#0b0b0b 0%,rgba(11,11,11,.2) 22%,rgba(11,11,11,0) 50%,rgba(11,11,11,.25) 80%,#0b0b0b 100%)}
+.cat-bubble{position:absolute;right:calc(18*var(--u));top:calc(30*var(--u));width:calc(150*var(--u));height:calc(150*var(--u));border-radius:50%;display:grid;place-items:center;text-align:center;padding:calc(16*var(--u));background:#0b0b0b;color:#fff;font-family:var(--f-script);font-size:calc(22*var(--u));line-height:1.1;box-shadow:0 0 0 calc(3*var(--u)) var(--gold),0 14px 30px rgba(0,0,0,.6);transform:rotate(-6deg);z-index:2}
+.cat-book{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:calc(26*var(--u)) calc(22*var(--u));background:var(--kraftgrad);color:#111;clip-path:polygon(0 0,100% 0,100% 100%,0 100%,4% 50%)}
+.cat-book::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(0deg,rgba(0,0,0,0) 0 3px,rgba(0,0,0,.015) 3px 4px)}
+.cat-book h3{font-family:var(--f-disp);font-weight:400;font-size:calc(36*var(--u));line-height:.9;color:#111}
+.cat-book h3 em{display:block;font-style:normal;font-family:var(--f-script);font-size:calc(42*var(--u));line-height:1;color:var(--red);transform:rotate(-3deg)}
+.cat-book .btn-blk{display:inline-flex;align-items:center;justify-content:center;gap:calc(12*var(--u));height:calc(44*var(--u));padding:0 calc(24*var(--u));margin-top:calc(14*var(--u));border-radius:calc(6*var(--u));background:#0b0b0b;color:#fff;font-family:var(--f-head);font-weight:600;font-size:calc(14*var(--u));letter-spacing:.1em;text-transform:uppercase;box-shadow:inset 0 0 0 1.5px var(--gold),0 8px 20px rgba(0,0,0,.35);transition:transform .3s var(--ease)}
+.cat-book .btn-blk:hover{transform:translateY(-2px)}
+.cat-book .btn-blk svg{width:calc(16*var(--u));height:calc(16*var(--u));fill:url(#goldGrad)}
+.perks{display:grid;grid-template-columns:repeat(3,1fr);gap:calc(8*var(--u));margin-top:calc(18*var(--u));width:100%}
+.perks li{display:flex;flex-direction:column;align-items:center;gap:calc(5*var(--u));font-family:var(--f-head);font-weight:700;font-size:calc(9.5*var(--u));letter-spacing:.08em;text-transform:uppercase;line-height:1.15;color:#111}
+.perks svg{width:calc(32*var(--u));height:calc(28*var(--u));fill:#111}
+
+/* ---------- FOOTER (same as home) ---------- */
+.site-footer{position:relative;height:calc(176*var(--u));overflow:hidden;background:#070707;color:#fff;border-top:1px solid rgba(212,175,55,.35)}
+.site-footer .stage{height:100%}
+.f-img{position:absolute;top:0;right:0;bottom:0;width:calc(265*var(--u))}
+.f-img img{width:100%;height:100%;object-fit:cover}
+.f-img::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#070707 0%,rgba(7,7,7,.55) 30%,rgba(7,7,7,0) 65%)}
+.f-logo{position:absolute;left:calc(38*var(--u));top:calc(8*var(--u))}
+.f-col{position:absolute;top:calc(18*var(--u))}
+.f-links{left:calc(318*var(--u))}
+.f-contact{left:calc(555*var(--u))}
+.f-col h4{font-family:var(--f-head);font-weight:500;font-size:calc(15*var(--u));letter-spacing:.02em;margin-bottom:calc(10*var(--u))}
+.f-links ul{display:grid;grid-template-columns:calc(73*var(--u)) auto;grid-auto-flow:column;grid-template-rows:repeat(4,auto);row-gap:calc(8*var(--u));gap: 14px;}
+.f-links a{display:inline-flex;align-items:center;gap:calc(8*var(--u));font-size:calc(12*var(--u));color:#e8e8e8;transition:color .3s}
+.f-links a .chev{width:calc(6*var(--u));height:calc(10*var(--u))}
+.f-links a:hover{color:var(--gold-l)}
+.f-contact li{display:flex;align-items:center;gap:calc(12*var(--u));margin-bottom:calc(9*var(--u));font-size:calc(12.5*var(--u));color:#e8e8e8}
+.f-contact li svg{width:calc(15*var(--u));height:calc(15*var(--u));color:var(--gold);flex-shrink:0}
+.f-contact a:hover{color:var(--gold-l)}
+.socials{display:flex;gap:calc(8*var(--u));margin:calc(12*var(--u)) 0 0 calc(22*var(--u))}
+.socials a{display:grid;place-items:center;width:calc(24*var(--u));height:calc(24*var(--u));border-radius:50%;background:var(--goldgrad);color:#111;transition:transform .3s var(--ease)}
+.socials a:hover{transform:translateY(-3px) rotate(8deg)}
+.socials svg{width:58%;height:58%}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media(max-width:991px){
+  :root{--hh:68px}
+  .header-inner{padding:0 16px;width:100%}
+  .site-header .logo{font-size:30px;width:auto}
+  .nav-toggle{display:flex}
+  .header-cta{margin-right:12px;height:38px;width:auto;padding:0 16px;font-size:13px;border-radius:5px}
+  .nav{position:fixed;top:var(--hh);right:0;bottom:0;width:min(86vw,340px);margin:0;flex-direction:column;align-items:stretch;padding:26px;background:#0d0d0d;border-left:1px solid rgba(212,175,55,.3);transform:translateX(100%);transition:transform .45s var(--ease);overflow-y:auto;z-index:960;box-shadow:-20px 0 60px rgba(0,0,0,.6)}
+  .nav.open{transform:none}
+  .nav-list{flex-direction:column;gap:0}
+  .nav-list a{font-size:17px;padding:14px 0;border-bottom:1px solid rgba(212,175,55,.15)}
+  .nav-list a::after{display:none}
+  .nav-cta{display:inline-flex;margin-top:22px;height:48px;border-radius:6px;font-size:15px}
+  .p-grid{grid-template-columns:repeat(3,1fr);gap:10px}
+  /*.p-img{height:180px}*/
+}
+@media(max-width:767px){
+  .header-cta{display:none}
+
+  .shero .stage{grid-template-columns:1fr;gap:34px;padding:34px 20px 70px}
+  .eyebrow{font-size:11px;letter-spacing:.38em}
+  .shero h1{font-size:40px;margin-top:10px}
+  .shero h1 em{font-size:52px}
+  .shero-sub{font-size:15px;margin-top:18px}
+  .shero-script{font-size:30px}
+  .shero-copy{font-size:15px;max-width:none}
+  .shero-btns{gap:12px;margin-top:22px}
+  .shero-btns .btn-red,.shero-btns .btn-goldfill{height:46px;padding:0 22px;border-radius:6px;font-size:14px}
+  .shero-art{width:100%;height:auto;aspect-ratio:1/1;justify-self:center;max-width:380px}
+  .art-main{width:78%;height:100%}
+  .art-bottle{width:38%;bottom:-6px}
+  .art-badge{width:84px;height:84px;right:-6px;bottom:12px}
+  .art-badge span{font-size:9.5px}
+  .art-badge b{font-size:28px}
+  .art-tag{left:34%;bottom:-4px;padding:8px 12px;font-size:11px}
+  .p-red{top:-10px;right:30px;border-left-width:22px;border-right-width:22px;border-top-width:38px}
+  .p-gold{top:90px;left:30%;border-left-width:14px;border-right-width:14px;border-bottom-width:24px}
+  .shero-streak{left:40%;width:200px}
+  .shero-swoosh{width:260px;height:36px}
+
+  .shop-head{padding:24px 20px 14px;gap:12px}
+  .shop-head h2{font-size:26px;letter-spacing:.06em}
+  .p-grid{grid-template-columns:repeat(2,1fr);gap:10px;padding:0 14px 28px}
+  /*.p-img{height:160px;padding:12px}*/
+  .p-tag{font-size:9px;top:8px;left:8px;padding:3px 7px}
+  .p-body{padding:10px 10px 12px}
+  .p-body h3{font-size:14px}
+  .p-body p{font-size:12px}
+  .p-price{font-size:20px}
+  .p-price small{font-size:10px}
+  .p-buy{height:38px;font-size:12px;border-radius:4px}
+  .p-buy svg{width:14px;height:14px}
+
+  .vid .stage{grid-template-columns:1fr;gap:30px;padding:34px 20px 40px}
+  .vid h2{font-size:32px}
+  .vid .scr{font-size:28px}
+  .vid p{font-size:15px}
+  .uses{grid-template-columns:1fr;gap:8px}
+  .uses li{font-size:13.5px}
+  .vid .btn-red{height:46px;padding:0 24px;font-size:14px;border-radius:6px;margin-top:18px}
+  .vid-badge{left:-6px;top:-10px;padding:7px 12px;font-size:11px}
+
+  .cater .stage{grid-template-columns:1fr;min-height:0}
+  .cat-copy{padding:34px 20px 24px}
+  .cat-copy h2{font-size:38px}
+  .cat-copy h2 em{font-size:44px}
+  .cat-copy p{font-size:14.5px}
+  .cat-list{gap:8px 12px}
+  .cat-list li{font-size:14px}
+  .cat-list li i{width:18px;height:18px}
+  .cat-media{height:220px}
+  .cat-media::before{background:linear-gradient(180deg,#0b0b0b 0%,rgba(11,11,11,0) 30%,rgba(11,11,11,0) 70%,#0b0b0b 100%)}
+  .cat-bubble{right:16px;top:auto;bottom:16px;width:120px;height:120px;font-size:17px;padding:12px}
+  .cat-book{padding:30px 20px 34px;clip-path:polygon(0 0,50% 6%,100% 0,100% 100%,0 100%)}
+  .cat-book h3{font-size:34px}
+  .cat-book h3 em{font-size:38px}
+  .cat-book .btn-blk{height:46px;padding:0 24px;font-size:14px;border-radius:6px}
+  .cat-book .btn-blk svg{width:16px;height:16px}
+  .perks{gap:10px;margin-top:20px}
+  .perks li{font-size:10px}
+  .perks svg{width:32px;height:28px}
+
+  .site-footer{height:auto;padding:40px 20px 30px}
+  .site-footer .stage{width:100%;display:grid;gap:30px;position:relative;z-index:2}
+  .f-img{width:100%;opacity:.18}
+  .f-img::before{display:none}
+  .f-logo,.f-col{position:static}
+  .f-logo{font-size:52px}
+  .f-col h4{font-size:18px;margin-bottom:12px}
+  .f-links ul{grid-template-columns:130px auto;row-gap:10px}
+  .f-links a{font-size:14px;gap:8px}
+  .f-links a .chev{width:6px;height:10px}
+  .f-contact li{font-size:14px;gap:12px;margin-bottom:12px}
+  .f-contact li svg{width:18px;height:18px}
+  .socials{margin:14px 0 0;gap:10px}
+  .socials a{width:38px;height:38px}
+  .l-hat{margin-bottom:2px;margin-left:-26px}
+}
+</style>
+</head>
+<body>
+
+<!-- shared SVG defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6512"/><stop offset=".35" stop-color="#d4af37"/><stop offset=".55" stop-color="#fff2b3"/><stop offset=".8" stop-color="#d4af37"/><stop offset="1" stop-color="#8a6512"/></linearGradient>
+    <linearGradient id="goldGradH" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#9a7418"/><stop offset=".3" stop-color="#e2bf52"/><stop offset=".5" stop-color="#fff2b3"/><stop offset=".75" stop-color="#d4af37"/><stop offset="1" stop-color="#b08a26"/></linearGradient>
+    <linearGradient id="goldGradV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0b0"/><stop offset=".4" stop-color="#d4af37"/><stop offset="1" stop-color="#8a6512"/></linearGradient>
+    <symbol id="hat" viewBox="0 0 102 80"><g class="hat-o"><path d="M26 54C12 53 4 44 6 33 8 22 20 16 31 20 33 9 43 3 53 4c9 1 17 7 19 15 10-5 23 1 24 12 1 11-7 20-19 22"/><path d="M26 54v20h51V54M26 63h51M40 63v11M63 63v11"/><path d="M38 34c2-6 4-10 8-13M60 34c-1-5-3-9-6-12"/></g></symbol>
+    <symbol id="chev" viewBox="0 0 10 16"><path d="M2.5 2l6 6-6 6"/></symbol>
+    <symbol id="cart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M3 4h2.5l2.2 11.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.2L21 8H6.3"/><circle cx="10" cy="20" r="1.4" fill="currentColor"/><circle cx="17.5" cy="20" r="1.4" fill="currentColor"/></symbol>
+    <symbol id="tick" viewBox="0 0 16 16"><path d="M3 8.5l3.2 3L13 4.5" fill="none" stroke="#1a1200" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </defs>
+</svg>
+
+<div class="progress" id="progress"></div>
+
+<!-- HEADER (identical to home, + Shop link) -->
+<header class="site-header" id="header">
+  <div class="stage header-inner">
+    <a class="logo" href="index.html" style="--s:40" aria-label="Chef Jay LeSoul Catering home">
+      <span class="l-top"><small>CHEF</small><svg class="l-hat"><use href="#hat"/></svg></span>
+      <span class="l-main"><b>JAY</b><i>LeSOUL</i></span>
+      <span class="l-sub">CATERING</span>
+    </a>
+    <nav class="nav" id="nav">
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="catering.html">Catering</a></li>
+        <li><a href="catering.html#menu">Menu</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="cooking-in-the-hood.html">Cooking in the Hood</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="btn-red nav-cta" href="contact.html">Book Now</a>
+    </nav>
+    <a class="btn-red header-cta" href="contact.html">Book Now</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ========================= SHOP HERO ========================= -->
+<section class="shero">
+  <svg class="shero-streak" viewBox="0 0 260 500" preserveAspectRatio="none" aria-hidden="true">
+    <polygon points="150,0 236,0 110,500 24,500" fill="url(#goldGradV)"/>
+  </svg>
+
+  <div class="stage">
+    <div class="shero-text reveal">
+      <span class="eyebrow">Black Crack Seasoning</span>
+      <h1>REAL FLAVOR.<br>STRAIGHT FROM<em>The Soul.</em></h1>
+      <p class="shero-sub">Bold. Garlicky. Addictive.</p>
+      <span class="shero-script">That's <b>BLACK CRACK.</b></span>
+      <p class="shero-copy">Chef Jay's signature all-purpose seasoning — the same blend behind every Cooking in the Hood plate. Great on chicken, seafood, beef, pork, veggies, fries and more.</p>
+      <div class="shero-btns">
+        <a href="#shop" class="btn-red">Shop the Collection <svg class="chev"><use href="#chev"/></svg></a>
+        <a href="#video" class="btn-goldfill">See It in Action</a>
+      </div>
+    </div>
+
+    <div class="shero-art reveal" data-delay="150">
+      <span class="p-acc p-red" aria-hidden="true"></span>
+      <span class="p-acc p-gold" aria-hidden="true"></span>
+      <div class="art-main"><img src="assets/images/black-crack-bottle.jpg" alt="Chef Jay LeSoul holding a jar of Black Crack Seasoning"></div>
+      <img class="art-bottle" src="assets/images/black-crack.png" alt="Black Crack Seasoning jar">
+      <div class="art-tag">Good Food. Real Flavor.<br>Straight From the Soul.</div>
+      <div class="art-badge"><span>Made with<b>Love</b>&amp; Soul</span></div>
+    </div>
+  </div>
+
+  <svg class="shero-swoosh" viewBox="0 0 430 56" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 56V20C120 38 290 46 430 56Z" fill="url(#goldGradH)"/>
+    <path d="M0 14C130 32 300 42 430 54" fill="none" stroke="#fff6cc" stroke-width="2" opacity=".85"/>
+  </svg>
+</section>
+
+<!-- ========================= SHOP THE COLLECTION ========================= -->
+<section class="shop" id="shop">
+  <div class="stage">
+    <div class="shop-head reveal"><i></i><h2>SHOP THE <em>COLLECTION</em></h2><i></i></div>
+    <div class="p-grid">
+
+      <div class="p-card reveal">
+        <div class="p-img"><span class="p-tag">Best Seller</span><img src="assets/images/black-crack.png" alt="Black Crack Seasoning" loading="lazy"></div>
+        <div class="p-body">
+          <h3>Black Crack Spices</h3>
+          <p>Our signature all-purpose seasoning. Bold. Garlicky. Addictive.</p>
+          <div class="p-price">$14.99<small>/ jar</small></div>
+          <a href="#" class="p-buy" data-product="black-crack">Shop Now <svg><use href="#cart"/></svg></a>
+        </div>
+      </div>
+
+      <div class="p-card reveal" data-delay="60">
+        <div class="p-img"><img src="assets/images/cookbook.png" alt="Jay LeSoul Cookbook" loading="lazy"></div>
+        <div class="p-body">
+          <h3>Jay LeSoul Cookbook</h3>
+          <p>Soulful recipes, family favorites, sides, desserts &amp; cooking tips.</p>
+          <div class="p-price">$29.99</div>
+          <a href="#" class="p-buy" data-product="cookbook">Shop Now <svg><use href="#cart"/></svg></a>
+        </div>
+      </div>
+
+      <div class="p-card reveal" data-delay="120">
+        <div class="p-img"><img src="assets/images/utensils.png" alt="Jay LeSoul kitchen utensils set" loading="lazy"></div>
+        <div class="p-body">
+          <h3>Kitchen Utensils</h3>
+          <p>Quality tools for the kitchen. Cook like a pro with Jay LeSoul.</p>
+          <div class="p-price">$34.99</div>
+          <a href="#" class="p-buy" data-product="utensils">Shop Now <svg><use href="#cart"/></svg></a>
+        </div>
+      </div>
+
+      <div class="p-card reveal" data-delay="180">
+        <div class="p-img"><img src="assets/images/aprons.png" alt="Cooking with Jay LeSoul apron" loading="lazy"></div>
+        <div class="p-body">
+          <h3>Aprons</h3>
+          <p>Rep the brand while you cook. Comfortable, durable &amp; stylish.</p>
+          <div class="p-price">$24.99</div>
+          <a href="#" class="p-buy" data-product="apron">Shop Now <svg><use href="#cart"/></svg></a>
+        </div>
+      </div>
+
+      <div class="p-card reveal" data-delay="240">
+        <div class="p-img"><img src="assets/images/hats.png" alt="Jay LeSoul chef hat" loading="lazy"></div>
+        <div class="p-body">
+          <h3>Chef Hats</h3>
+          <p>Classic chef style with Jay LeSoul flavor.</p>
+          <div class="p-price">$19.99</div>
+          <a href="#" class="p-buy" data-product="hat">Shop Now <svg><use href="#cart"/></svg></a>
+        </div>
+      </div>
+
+      <div class="p-card reveal" data-delay="300">
+        <div class="p-img"><span class="p-tag">Gift</span><img src="assets/images/gift.png" alt="Black Crack gift set" loading="lazy"></div>
+        <div class="p-body">
+          <h3>Black Crack Gift Sets</h3>
+          <p>Perfect for any occasion. Flavor, tools &amp; style all in one.</p>
+          <div class="p-price">$59.99</div>
+          <a href="#" class="p-buy" data-product="gift-set">Shop Now <svg><use href="#cart"/></svg></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================= VIDEO ========================= -->
+<section class="vid" id="video">
+  <div class="stage">
+    <div class="reveal">
+      <h2>SEE IT <em>IN ACTION</em></h2>
+      <span class="scr">One shake changes everything</span>
+      <p>Watch Chef Jay bring Black Crack to the plate. Garlic-forward, perfectly salted, with a slow heat that makes you reach for more.</p>
+      <ul class="uses">
+        <li>Chicken</li><li>Seafood</li><li>Beef &amp; Pork</li><li>Veggies &amp; Fries</li>
+      </ul>
+      <a href="#shop" class="btn-red">Get the Seasoning <svg class="chev"><use href="#chev"/></svg></a>
+    </div>
+    <div class="vid-frame reveal" data-delay="150">
+      <span class="vid-badge">Chef Jay &middot; Black Crack</span>
+      <video src="assets/images/searoning-video.mp4" poster="assets/images/hero-seasoning-pour.jpg" autoplay muted loop playsinline controls preload="metadata"></video>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= CATERING BAND ========================= -->
+<section class="cater">
+  <div class="stage">
+    <div class="cat-copy reveal">
+      <h2>CATERING<em>Services</em></h2>
+      <p>We cater to all occasions with big flavor and even bigger portions!</p>
+      <ul class="cat-list">
+        <li><i><svg><use href="#tick"/></svg></i>Birthdays</li>
+        <li><i><svg><use href="#tick"/></svg></i>Showers</li>
+        <li><i><svg><use href="#tick"/></svg></i>Family Gatherings</li>
+        <li><i><svg><use href="#tick"/></svg></i>Parties</li>
+        <li><i><svg><use href="#tick"/></svg></i>Corporate Events</li>
+        <li><i><svg><use href="#tick"/></svg></i>And More!</li>
+      </ul>
+    </div>
+    <div class="cat-media">
+      <img src="assets/images/gallery-img-5.jpeg" alt="Catering trays ready to serve" loading="lazy">
+      <div class="cat-bubble">We Bring the Flavor. You Make the Memories!</div>
+    </div>
+    <div class="cat-book reveal" data-delay="100">
+      <h3>BOOK JAY<em>Today!</em></h3>
+      <a href="contact.html" class="btn-blk">Book Catering <svg viewBox="0 0 64 56"><path fill-rule="evenodd" d="M11 8h42a5 5 0 0 1 5 5v37a5 5 0 0 1-5 5H11a5 5 0 0 1-5-5V13a5 5 0 0 1 5-5Zm-1 14v28a1 1 0 0 0 1 1h42a1 1 0 0 0 1-1V22Z"/><rect x="17" y="2" width="4.5" height="12" rx="2.25"/><rect x="42.5" y="2" width="4.5" height="12" rx="2.25"/><rect x="14" y="27" width="6" height="5" rx="1"/><rect x="23.5" y="27" width="6" height="5" rx="1"/><rect x="33" y="27" width="6" height="5" rx="1"/><rect x="14" y="36" width="6" height="5" rx="1"/><rect x="23.5" y="36" width="6" height="5" rx="1"/></svg></a>
+      <ul class="perks">
+        <li><svg viewBox="0 0 64 56"><path d="M32 7a4 4 0 0 1 4 4v1.3C48 14.2 56.5 23.5 57.5 35h-51C7.5 23.5 16 14.2 28 12.3V11a4 4 0 0 1 4-4Z"/><rect x="3" y="38" width="58" height="5" rx="2.5"/></svg>Custom Menus</li>
+        <li><svg viewBox="0 0 64 56"><circle cx="32" cy="13" r="7.5"/><circle cx="13.5" cy="18" r="5.8"/><circle cx="50.5" cy="18" r="5.8"/><path d="M17 50c0-10 6.5-17 15-17s15 7 15 17z"/><path d="M1 48c0-7.5 5-12.5 12.5-12.5 3 0 5.5.8 7.5 2.2-3.3 3-5.4 6.4-6 10.3z"/><path d="M63 48c0-7.5-5-12.5-12.5-12.5-3 0-5.5.8-7.5 2.2 3.3 3 5.4 6.4 6 10.3z"/></svg>Professional Service</li>
+        <li><svg viewBox="0 0 64 56"><path d="M22 24h-9a4 4 0 0 0-4 4v18a4 4 0 0 0 4 4h9zM26 50h20a6 6 0 0 0 5.8-4.5l4-16A5 5 0 0 0 51 23H40l2-9a6 6 0 0 0-5-7l-1-.2-10 17z"/></svg>Unforgettable Experience</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER (identical to home, + Shop link) -->
+<footer class="site-footer">
+  <div class="f-img"><img src="assets/images/gallery-13.jpeg" alt="" loading="lazy"></div>
+  <div class="stage">
+    <a class="logo f-logo" href="index.html" style="--s:60" aria-label="Chef Jay LeSoul Catering home">
+      <span class="l-top"><small>CHEF</small><svg class="l-hat"><use href="#hat"/></svg></span>
+      <span class="l-main"><b>JAY</b><i>LeSOUL</i></span>
+      <span class="l-sub">CATERING</span>
+    </a>
+    <div class="f-col f-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html"><i class="fa fa-angle-right"></i>Home</a></li>
+        <li><a href="about.html"><i class="fa fa-angle-right"></i>About</a></li>
+        <li><a href="catering.html"><i class="fa fa-angle-right"></i>Catering</a></li>
+        <li><a href="shop.html"><i class="fa fa-angle-right"></i>Shop</a></li>
+        <li><a href="gallery.html"><i class="fa fa-angle-right"></i>Gallery</a></li>
+        <li><a href="cooking-in-the-hood.html"><i class="fa fa-angle-right"></i>Cooking in the Hood</a></li>
+        <li><a href="contact.html"><i class="fa fa-angle-right"></i>Contact</a></li>
+        <li><a href="catering.html#menu"><i class="fa fa-angle-right"></i>Menu</a></li>
+      </ul>
+    </div>
+    <div class="f-col f-contact">
+      <h4>Contact Us</h4>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><a href="tel:+12166737299">(216) 673-7299</a></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg><a href="mailto:hello@chefjaylesoul.com">hello@chefjaylesoul.com</a></li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Cleveland, OH</li>
+      </ul>
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7H16l.5-4h-3V9c0-.6.4-1 1-1z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15V9l5.2 3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="#" class="to-top" id="toTop" aria-label="Back to top">↑</a>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

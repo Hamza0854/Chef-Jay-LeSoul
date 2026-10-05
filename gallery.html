@@ -3,37 +3,321 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Gallery | Chef Jay LeSoul Catering</title>
-<meta name="description" content="Food, events, the team and flyers — moments served by Chef Jay LeSoul Catering.">
+<title>Gallery | Chef Jay LeSoul Catering — Cleveland, OH</title>
+<meta name="description" content="Food, events, the team and flyers — moments served by Chef Jay LeSoul Catering across Greater Cleveland.">
+<meta name="theme-color" content="#0a0a0a">
 <link rel="icon" href="assets/images/fav.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Kaushan+Script&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Mr+Dafoe&family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<style>
+/* =========================================================
+   CHEF JAY LeSOUL — GALLERY  (shares the home-page system)
+   ========================================================= */
+:root{
+  --u:clamp(.5px, calc(100vw / 1024), 1.6px);
+  --black:#0a0a0a;--red:#c8102e;--red-d:#8a0a1d;--gold:#d4af37;--gold-l:#f3d77a;
+  --goldgrad:linear-gradient(135deg,#8a6512 0%,#d4af37 24%,#fff0b0 48%,#d4af37 70%,#8a6512 100%);
+  --f-disp:'Anton',Impact,sans-serif;--f-head:'Oswald',sans-serif;--f-script:'Mr Dafoe',cursive;--f-body:'Poppins',system-ui,sans-serif;
+  --hh:calc(88*var(--u));--ease:cubic-bezier(.2,.75,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--f-body);background:var(--black);color:#222;overflow-x:hidden;line-height:1.4}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;border:0;background:none;cursor:pointer}
+.stage{position:relative;margin:0 auto}
+
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--goldgrad);z-index:1000}
+.to-top{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;background:var(--goldgrad);color:#1a1200;display:grid;place-items:center;font-size:20px;font-weight:700;box-shadow:0 10px 25px rgba(0,0,0,.35);opacity:0;visibility:hidden;transform:translateY(20px);transition:.4s var(--ease);z-index:800}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none!important}}
+
+/* ---------- buttons ---------- */
+.btn-red{display:inline-flex;align-items:center;justify-content:center;gap:calc(10*var(--u));background:linear-gradient(180deg,#dc1331,#9c0a21);color:#fff;font-family:var(--f-head);font-weight:500;letter-spacing:.05em;text-transform:uppercase;box-shadow:inset 0 0 0 1.5px rgba(245,205,110,.75),0 6px 16px rgba(200,16,46,.35);transition:transform .3s var(--ease),box-shadow .3s,filter .3s;white-space:nowrap}
+.btn-red:hover{transform:translateY(-2px);filter:brightness(1.08);box-shadow:inset 0 0 0 1.5px var(--gold-l),0 10px 24px rgba(200,16,46,.45)}
+.chev{width:.55em;height:.9em;flex-shrink:0;transition:transform .3s}
+.chev path{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+a:hover>.chev{transform:translateX(3px)}
+
+/* ---------- logo ---------- */
+.logo{display:inline-flex;flex-direction:column;align-items:flex-start;font-size:calc(var(--s)*var(--u));line-height:1;flex-shrink:0}
+.l-top{display:flex;align-items:flex-end;gap:.1em;height:.72em;margin-left:.45em}
+.l-top small{font-family:var(--f-head);font-weight:600;font-size:.27em;letter-spacing:.08em;color:var(--gold);margin-bottom:.06em}
+.l-hat{width:.55em;height:.95em;margin-bottom:4px;margin-left:-42px}
+.l-main{display:flex;gap:.1em;font-family:var(--f-disp);font-size:1em;letter-spacing:-.005em;line-height:1}
+.l-main b{font-weight:400;color:#fff}
+.l-main i{font-style:normal;color:var(--red);-webkit-text-stroke:.01em rgba(243,215,122,.55)}
+.l-sub{font-family:var(--f-head);font-weight:500;font-size:.22em;letter-spacing:1em;color:var(--gold);margin:.35em 0 0 1em}
+.hat-o{fill:none;stroke:url(#goldGrad);stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- header ---------- */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--hh);background:#0a0a0a;transition:box-shadow .3s}
+.site-header.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.55)}
+.header-inner{display:flex;justify-content:space-between;align-items:center;height:100%;padding:0 calc(39*var(--u)) 0 calc(40*var(--u))}
+.site-header .logo{width:calc(182*var(--u))}
+.nav{display:flex;align-items:center;margin-left:calc(80*var(--u))}
+.nav-list{display:flex;gap:calc(23*var(--u))}
+.nav-list a{position:relative;display:block;padding:calc(6*var(--u)) 0;font-family:var(--f-head);font-weight:500;font-size:calc(12.3*var(--u));letter-spacing:.03em;text-transform:uppercase;color:#fff;transition:color .3s}
+.nav-list a::after{content:"";position:absolute;left:0;bottom:calc(-5*var(--u));height:calc(2*var(--u));width:0;background:var(--goldgrad);transition:width .35s var(--ease)}
+.nav-list a:hover,.nav-list a.active{color:#e2b64b}
+.nav-list a:hover::after,.nav-list a.active::after{width:100%}
+.nav-cta{display:none}
+.header-cta{margin-left:auto;width:calc(117*var(--u));height:calc(36*var(--u));border-radius:calc(5*var(--u));font-size:calc(13.5*var(--u))}
+.nav-toggle{display:none;width:44px;height:44px;flex-direction:column;justify-content:center;align-items:center;gap:6px;border-radius:10px;border:1px solid rgba(212,175,55,.4)}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--gold);transition:.35s var(--ease)}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.nav-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:890;opacity:0;visibility:hidden;transition:.4s}
+.nav-backdrop.show{opacity:1;visibility:visible}
+body.nav-lock{overflow:hidden}
+
+/* =========================================================
+   PAGE HERO — white marble, title + filters
+   ========================================================= */
+.phero{position:relative;margin-top:var(--hh);overflow:hidden;color:#1d1d1d;
+  background:
+    linear-gradient(118deg,rgba(0,0,0,0) 0 6%,rgba(0,0,0,.045) 12%,rgba(0,0,0,0) 19%),
+    linear-gradient(118deg,rgba(0,0,0,0) 0 36%,rgba(0,0,0,.04) 43%,rgba(0,0,0,0) 50%),
+    linear-gradient(160deg,#ffffff 0%,#fbfaf8 55%,#f2efea 100%)}
+.phero .stage{position:relative;z-index:2;padding:calc(40*var(--u)) calc(40*var(--u)) calc(46*var(--u)) calc(44*var(--u))}
+.phero-streak{position:absolute;top:0;bottom:0;right:calc(120*var(--u));width:calc(260*var(--u));z-index:1;pointer-events:none;overflow:visible}
+.phero-swoosh{position:absolute;left:0;bottom:0;width:calc(430*var(--u));height:calc(56*var(--u));z-index:1;pointer-events:none;opacity:.9}
+/* accent triangles top-right, home style */
+.phero-acc{position:absolute;top:0;right:0;width:calc(300*var(--u));height:calc(120*var(--u));z-index:1;pointer-events:none}
+
+.eyebrow{display:inline-flex;align-items:center;gap:calc(10*var(--u));font-family:var(--f-head);font-weight:600;font-size:calc(12*var(--u));letter-spacing:.42em;color:var(--red);text-transform:uppercase}
+.eyebrow::before{content:"";width:calc(34*var(--u));height:calc(3*var(--u));border-radius:3px;background:var(--goldgrad)}
+.phero h1{margin-top:calc(10*var(--u));font-family:var(--f-disp);font-weight:400;font-size:calc(62*var(--u));line-height:.94;letter-spacing:-.005em;color:#111;text-shadow:0 2px 6px rgba(0,0,0,.1)}
+.phero h1 em{font-style:normal;color:var(--red);text-shadow:0 2px 8px rgba(200,16,46,.2)}
+.phero-script{position:relative;display:inline-block;margin:calc(8*var(--u)) 0 0 calc(4*var(--u));font-family:var(--f-script);font-size:calc(38*var(--u));line-height:1.1;color:#9b0d24;transform:rotate(-2deg);transform-origin:left center;white-space:nowrap}
+.phero-script .brush{position:absolute;left:3%;bottom:calc(-8*var(--u));width:94%;height:calc(14*var(--u));z-index:-1}
+
+/* filter pills */
+.filters{display:flex;flex-wrap:wrap;gap:calc(10*var(--u));margin-top:calc(26*var(--u))}
+.filter{position:relative;height:calc(38*var(--u));padding:0 calc(22*var(--u));border-radius:calc(30*var(--u));font-family:var(--f-head);font-weight:600;font-size:calc(13.5*var(--u));letter-spacing:.08em;text-transform:uppercase;color:#1d1300;background:#fff;box-shadow:inset 0 0 0 2px var(--gold),0 4px 12px rgba(212,175,55,.18);transition:transform .3s var(--ease),box-shadow .3s,background .3s,color .3s}
+.filter:hover{transform:translateY(-2px);background:var(--goldgrad);box-shadow:0 8px 18px rgba(212,175,55,.35)}
+.filter.active{color:#fff;background:linear-gradient(180deg,#dc1331,#9c0a21);box-shadow:inset 0 0 0 1.5px rgba(245,205,110,.75),0 6px 16px rgba(200,16,46,.35)}
+
+/* =========================================================
+   GALLERY GRID
+   ========================================================= */
+.gallery-sec{background:#fff}
+.gallery-sec .stage{padding:calc(26*var(--u)) calc(22*var(--u)) calc(40*var(--u))}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(10*var(--u))}
+.g-item{position:relative;display:block;aspect-ratio:1/1;border-radius:calc(3*var(--u));overflow:hidden;background:#eee;box-shadow:0 4px 12px rgba(0,0,0,.12);transition:transform .45s var(--ease),box-shadow .45s,opacity .5s var(--ease)}
+.g-item:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.2),inset 0 0 0 2px var(--gold)}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.g-item:hover img{transform:scale(1.08)}
+/* gold/red corner cut, like the home accents */
+.g-item::before{content:"";position:absolute;top:0;right:0;width:calc(34*var(--u));height:calc(34*var(--u));background:var(--goldgrad);clip-path:polygon(100% 0,0 0,100% 100%);opacity:0;transition:opacity .4s;z-index:2}
+.g-item::after{content:"";position:absolute;top:0;right:0;width:calc(16*var(--u));height:calc(16*var(--u));background:var(--red);clip-path:polygon(100% 0,0 0,100% 100%);opacity:0;transition:opacity .4s;z-index:2}
+.g-item:hover::before,.g-item:hover::after{opacity:1}
+.g-item span{position:absolute;left:0;right:0;bottom:0;padding:calc(26*var(--u)) calc(12*var(--u)) calc(10*var(--u));font-family:var(--f-head);font-weight:500;font-size:calc(13*var(--u));letter-spacing:.04em;text-transform:uppercase;color:#fff;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.78));transform:translateY(100%);transition:transform .45s var(--ease);z-index:2}
+.g-item span::before{content:"";display:block;width:calc(26*var(--u));height:calc(2*var(--u));margin-bottom:calc(6*var(--u));border-radius:2px;background:var(--goldgrad)}
+.g-item:hover span{transform:none}
+.g-item.hide{display:none}
+
+/* ---------- lightbox (hooks used by script.js) ---------- */
+.lightbox{position:fixed;inset:0;z-index:1200;display:grid;place-items:center;background:rgba(5,5,5,.94);opacity:0;visibility:hidden;transition:.35s var(--ease)}
+.lightbox.open{opacity:1;visibility:visible}
+.lightbox img{max-width:min(92vw,1100px);max-height:82vh;object-fit:contain;border-radius:4px;box-shadow:0 0 0 2px var(--gold),0 30px 70px rgba(0,0,0,.7);transform:scale(.96);transition:transform .4s var(--ease)}
+.lightbox.open img{transform:none}
+.lb-cap{position:absolute;left:50%;bottom:4vh;transform:translateX(-50%);padding:8px 18px;font-family:var(--f-head);font-weight:500;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:#1a1200;background:var(--goldgrad);border-radius:30px;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis}
+.lb-btn{position:absolute;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--goldgrad);color:#1a1200;font-size:26px;line-height:1;box-shadow:0 10px 25px rgba(0,0,0,.45);transition:transform .3s var(--ease),filter .3s;z-index:2}
+.lb-btn:hover{transform:scale(1.08);filter:brightness(1.08)}
+.lb-close{top:18px;right:18px}
+.lb-prev{left:18px;top:50%;transform:translateY(-50%)}
+.lb-next{right:18px;top:50%;transform:translateY(-50%)}
+.lb-prev:hover{transform:translateY(-50%) scale(1.08)}
+.lb-next:hover{transform:translateY(-50%) scale(1.08)}
+
+/* ---------- CTA BAND (same as home) ---------- */
+.cta{position:relative;height:calc(130*var(--u));overflow:hidden;color:#fff;background:radial-gradient(ellipse at 22% 50%,#b8112d 0%,#8a0a1d 55%,#56050f 100%)}
+.cta::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(115deg,transparent 0 44px,rgba(255,255,255,.025) 44px 46px)}
+.cta-media{position:absolute;top:0;bottom:0;right:0;left:calc(50% + 108*var(--u));
+  clip-path:polygon(calc(14*var(--u)) 100%,calc(50*var(--u)) 72.5%,calc(93*var(--u)) 48.9%,calc(142.6*var(--u)) 29.4%,calc(199*var(--u)) 13.8%,calc(262*var(--u)) 2.3%,100% 2.3%,100% 100%)}
+.cta-media img{width:100%;height:100%;object-fit:cover;object-position:center 45%;animation:kb 14s ease-in-out infinite alternate}
+.cta-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.18),transparent 30%)}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.12)}}
+.cta-swoosh{position:absolute;top:0;left:calc(50% + 108*var(--u));width:calc(404*var(--u));height:calc(130*var(--u));overflow:visible;pointer-events:none;z-index:1}
+.sw-ribbon{fill:url(#goldGradH);filter:drop-shadow(0 0 5px rgba(246,226,122,.45));opacity:0;animation:fadeIn 1s var(--ease) .2s forwards}
+.sw-line{fill:none;stroke:url(#goldGradH);stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:100;animation:draw 1.6s var(--ease) .5s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fadeIn{to{opacity:1}}
+.cta .stage{height:100%;z-index:2}
+.cta-copy{position:absolute;left:calc(50*var(--u));top:calc(12*var(--u))}
+.cta-copy h2{font-family:var(--f-disp);font-weight:400;font-size:calc(29*var(--u));line-height:1;letter-spacing:.01em;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.cta-copy p{margin-top:calc(8*var(--u));font-size:calc(13.6*var(--u));font-weight:300;line-height:1.45;color:#f6dfe3}
+.cta-copy p span{margin:0 .4em;opacity:.8}
+.btn-quote{position:absolute;left:calc(410*var(--u));top:calc(32*var(--u));display:inline-flex;align-items:center;justify-content:center;gap:calc(14*var(--u));width:calc(182*var(--u));height:calc(44*var(--u));border-radius:calc(6*var(--u));background:var(--goldgrad);background-size:200% auto;animation:shine 5s linear infinite;color:#2a1a00;font-family:var(--f-head);font-weight:600;font-size:calc(17*var(--u));letter-spacing:.04em;box-shadow:0 8px 20px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.45);transition:transform .3s var(--ease)}
+.btn-quote:hover{transform:translateY(-2px)}
+@keyframes shine{to{background-position:200% center}}
+
+/* ---------- FOOTER (same as home) ---------- */
+.site-footer{position:relative;height:calc(176*var(--u));overflow:hidden;background:#070707;color:#fff;border-top:1px solid rgba(212,175,55,.35)}
+.site-footer .stage{height:100%}
+.f-img{position:absolute;top:0;right:0;bottom:0;width:calc(265*var(--u))}
+.f-img img{width:100%;height:100%;object-fit:cover}
+.f-img::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#070707 0%,rgba(7,7,7,.55) 30%,rgba(7,7,7,0) 65%)}
+.f-logo{position:absolute;left:calc(38*var(--u));top:calc(8*var(--u))}
+.f-col{position:absolute;top:calc(18*var(--u))}
+.f-links{left:calc(318*var(--u))}
+.f-contact{left:calc(555*var(--u))}
+.f-col h4{font-family:var(--f-head);font-weight:500;font-size:calc(15*var(--u));letter-spacing:.02em;margin-bottom:calc(10*var(--u))}
+.f-links ul{display:grid;grid-template-columns:calc(73*var(--u)) auto;grid-auto-flow:column;grid-template-rows:repeat(4,auto);row-gap:calc(8*var(--u));gap: 14px;}
+.f-links a{display:inline-flex;align-items:center;gap:calc(8*var(--u));font-size:calc(12*var(--u));color:#e8e8e8;transition:color .3s}
+.f-links a .chev{width:calc(6*var(--u));height:calc(10*var(--u))}
+.f-links a:hover{color:var(--gold-l)}
+.f-contact li{display:flex;align-items:center;gap:calc(12*var(--u));margin-bottom:calc(9*var(--u));font-size:calc(12.5*var(--u));color:#e8e8e8}
+.f-contact li svg{width:calc(15*var(--u));height:calc(15*var(--u));color:var(--gold);flex-shrink:0}
+.f-contact a:hover{color:var(--gold-l)}
+.socials{display:flex;gap:calc(8*var(--u));margin:calc(12*var(--u)) 0 0 calc(22*var(--u))}
+.socials a{display:grid;place-items:center;width:calc(24*var(--u));height:calc(24*var(--u));border-radius:50%;background:var(--goldgrad);color:#111;transition:transform .3s var(--ease)}
+.socials a:hover{transform:translateY(-3px) rotate(8deg)}
+.socials svg{width:58%;height:58%}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media(max-width:991px){
+  :root{--hh:68px}
+  .header-inner{padding:0 16px;width:100%}
+  .site-header .logo{font-size:30px;width:auto}
+  .nav-toggle{display:flex}
+  .header-cta{margin-right:12px;height:38px;width:auto;padding:0 16px;font-size:13px;border-radius:5px}
+  .nav{position:fixed;top:var(--hh);right:0;bottom:0;width:min(86vw,340px);margin:0;flex-direction:column;align-items:stretch;padding:26px;background:#0d0d0d;border-left:1px solid rgba(212,175,55,.3);transform:translateX(100%);transition:transform .45s var(--ease);overflow-y:auto;z-index:960;box-shadow:-20px 0 60px rgba(0,0,0,.6)}
+  .nav.open{transform:none}
+  .nav-list{flex-direction:column;gap:0}
+  .nav-list a{font-size:17px;padding:14px 0;border-bottom:1px solid rgba(212,175,55,.15)}
+  .nav-list a::after{display:none}
+  .nav-cta{display:inline-flex;margin-top:22px;height:48px;border-radius:6px;font-size:15px}
+  .gallery{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:767px){
+  .header-cta{display:none}
+
+  .phero .stage{padding:34px 20px 60px}
+  .eyebrow{font-size:11px;letter-spacing:.38em}
+  .phero h1{font-size:44px;margin-top:10px}
+  .phero-script{font-size:28px;white-space:normal}
+  .filters{gap:8px;margin-top:20px}
+  .filter{height:36px;padding:0 16px;font-size:12.5px;border-radius:30px}
+  .phero-streak{right:-60px;width:220px;opacity:.6}
+  .phero-acc{width:180px;height:70px;opacity:.9}
+  .phero-swoosh{width:260px;height:36px}
+
+  .gallery-sec .stage{padding:18px 14px 30px}
+  .gallery{grid-template-columns:repeat(2,1fr);gap:8px}
+  .g-item{border-radius:4px}
+  .g-item::before{width:28px;height:28px}
+  .g-item::after{width:14px;height:14px}
+  .g-item span{transform:none;padding:22px 10px 8px;font-size:11.5px}
+  .g-item span::before{width:22px;height:2px;margin-bottom:5px}
+
+  .lb-btn{width:42px;height:42px;font-size:22px}
+  .lb-close{top:12px;right:12px}
+  .lb-prev{left:10px}
+  .lb-next{right:10px}
+  .lb-cap{font-size:12px;padding:7px 14px}
+
+  .cta{height:auto;padding:30px 20px 200px}
+  .cta .stage{width:100%}
+  .cta-copy{position:static}
+  .cta-copy h2{font-size:30px}
+  .cta-copy p{font-size:13px;margin-top:10px}
+  .btn-quote{position:relative;left:auto;top:auto;margin-top:18px;width:auto;height:46px;padding:0 24px;font-size:16px;gap:10px;border-radius:6px}
+  .cta-media{top:auto;left:0;height:170px;clip-path:polygon(0 32%,100% 0,100% 100%,0 100%)}
+  .cta-swoosh{display:none}
+
+  .site-footer{height:auto;padding:40px 20px 30px}
+  .site-footer .stage{width:100%;display:grid;gap:30px;position:relative;z-index:2}
+  .f-img{width:100%;opacity:.18}
+  .f-img::before{display:none}
+  .f-logo,.f-col{position:static}
+  .f-logo{font-size:52px}
+  .f-col h4{font-size:18px;margin-bottom:12px}
+  .f-links ul{grid-template-columns:130px auto;row-gap:10px}
+  .f-links a{font-size:14px;gap:8px}
+  .f-links a .chev{width:6px;height:10px}
+  .f-contact li{font-size:14px;gap:12px;margin-bottom:12px}
+  .f-contact li svg{width:18px;height:18px}
+  .socials{margin:14px 0 0;gap:10px}
+  .socials a{width:38px;height:38px}
+  .l-hat{margin-bottom:2px;margin-left:-26px}
+}
+</style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6512"/><stop offset=".35" stop-color="#d4af37"/><stop offset=".55" stop-color="#fff2b3"/><stop offset=".8" stop-color="#d4af37"/><stop offset="1" stop-color="#8a6512"/></linearGradient></defs></svg>
+
+<!-- shared SVG defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6512"/><stop offset=".35" stop-color="#d4af37"/><stop offset=".55" stop-color="#fff2b3"/><stop offset=".8" stop-color="#d4af37"/><stop offset="1" stop-color="#8a6512"/></linearGradient>
+    <linearGradient id="goldGradH" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#9a7418"/><stop offset=".3" stop-color="#e2bf52"/><stop offset=".5" stop-color="#fff2b3"/><stop offset=".75" stop-color="#d4af37"/><stop offset="1" stop-color="#b08a26"/></linearGradient>
+    <linearGradient id="goldGradV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0b0"/><stop offset=".4" stop-color="#d4af37"/><stop offset="1" stop-color="#8a6512"/></linearGradient>
+    <linearGradient id="gRed" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ea1840"/><stop offset="1" stop-color="#6e0615"/></linearGradient>
+    <linearGradient id="gBlk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3a3a"/><stop offset="1" stop-color="#000"/></linearGradient>
+    <symbol id="hat" viewBox="0 0 102 80"><g class="hat-o"><path d="M26 54C12 53 4 44 6 33 8 22 20 16 31 20 33 9 43 3 53 4c9 1 17 7 19 15 10-5 23 1 24 12 1 11-7 20-19 22"/><path d="M26 54v20h51V54M26 63h51M40 63v11M63 63v11"/><path d="M38 34c2-6 4-10 8-13M60 34c-1-5-3-9-6-12"/></g></symbol>
+    <symbol id="chev" viewBox="0 0 10 16"><path d="M2.5 2l6 6-6 6"/></symbol>
+  </defs>
+</svg>
+
 <div class="progress" id="progress"></div>
 
+<!-- HEADER (identical to home) -->
 <header class="site-header" id="header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="Chef Jay LeSoul Catering home"><svg class="hat" viewBox="0 0 64 48"><path d="M12 32c-6-1-9-6-8-11 1-5 6-8 11-7 1-6 7-10 13-10s12 4 13 10c5-1 10 2 11 7s-2 10-8 11v9a3 3 0 0 1-3 3H15a3 3 0 0 1-3-3z"/></svg><span class="brand-text"><b>CHEF JAY <i>LeSOUL</i></b><small>CATERING</small></span></a>
+  <div class="stage header-inner">
+    <a class="logo" href="index.html" style="--s:40" aria-label="Chef Jay LeSoul Catering home">
+      <span class="l-top"><small>CHEF</small><svg class="l-hat"><use href="#hat"/></svg></span>
+      <span class="l-main"><b>JAY</b><i>LeSOUL</i></span>
+      <span class="l-sub">CATERING</span>
+    </a>
     <nav class="nav" id="nav">
-      <ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="catering.html">Catering</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="cooking-in-the-hood.html">Cooking in the Hood</a></li><li><a href="contact.html">Contact</a></li></ul>
-      <a class="btn btn-red nav-cta" href="contact.html">Book Now</a>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="catering.html">Catering</a></li>
+        <li><a href="catering.html#menu">Menu</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="cooking-in-the-hood.html">Cooking in the Hood</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="btn-red nav-cta" href="contact.html">Book Now</a>
     </nav>
-    <a class="btn btn-red header-cta" href="contact.html">Book Now</a>
+    <a class="btn-red header-cta" href="contact.html">Book Now</a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <main id="main">
-<section class="page-hero compact">
-  <div class="hero-glow"></div>
-  <div class="container center">
-    <span class="eyebrow red reveal" data-reveal="up">Gallery</span>
-    <h1 class="page-title reveal" data-reveal="up" data-delay="100">Moments <span class="r">We've Served</span></h1>
-    <p class="script reveal" data-reveal="up" data-delay="200">The food, the tables and the people</p>
-    <div class="filters reveal" data-reveal="up" data-delay="300">
+
+<!-- ========================= GALLERY HERO ========================= -->
+<section class="phero">
+  <svg class="phero-streak" viewBox="0 0 260 500" preserveAspectRatio="none" aria-hidden="true">
+    <polygon points="150,0 236,0 110,500 24,500" fill="url(#goldGradV)" opacity=".55"/>
+    <polygon points="212,0 236,0 110,500 86,500" fill="#fff6cc" opacity=".5"/>
+  </svg>
+  <svg class="phero-acc" viewBox="0 0 300 120" aria-hidden="true">
+    <polygon points="160,0 214,0 187,47"  fill="url(#gRed)"/>
+    <polygon points="232,0 300,0 300,58"  fill="url(#goldGradV)"/>
+    <polygon points="206,60 260,60 233,106" fill="url(#gBlk)"/>
+  </svg>
+
+  <div class="stage">
+    <span class="eyebrow reveal">Gallery</span>
+    <h1 class="reveal" data-delay="80">MOMENTS <em>WE'VE SERVED</em></h1>
+    <p class="phero-script reveal" data-delay="160">The food, the tables and the people
+      <svg class="brush" viewBox="0 0 440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M4 30C90 18 230 8 436 5 300 14 170 22 70 34 40 37 14 38 4 30Z" fill="url(#goldGrad)"/></svg>
+    </p>
+    <div class="filters reveal" data-delay="240">
       <button class="filter active" data-filter="all">All</button>
       <button class="filter" data-filter="food">Food</button>
       <button class="filter" data-filter="events">Events</button>
@@ -41,11 +325,16 @@
       <button class="filter" data-filter="flyers">Flyers</button>
     </div>
   </div>
-  <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,42 C240,92 480,2 720,42 C960,82 1200,2 1440,42 L1440,80 L0,80 Z"/></svg>
+
+  <svg class="phero-swoosh" viewBox="0 0 430 56" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 56V20C120 38 290 46 430 56Z" fill="url(#goldGradH)"/>
+    <path d="M0 14C130 32 300 42 430 54" fill="none" stroke="#fff6cc" stroke-width="2" opacity=".85"/>
+  </svg>
 </section>
 
+<!-- GALLERY -->
 <section class="gallery-sec">
-  <div class="container">
+  <div class="stage">
     <div class="gallery" id="gallery">
       <a class="g-item" data-cat="team" href="assets/images/chef-jay-kitchen.jpg"><img src="assets/images/chef-jay-kitchen.jpg" alt="Chef Jay in the kitchen" loading="lazy"><span>Chef Jay in the kitchen</span></a>
       <a class="g-item" data-cat="food" href="assets/images/gallery-12.jpeg"><img src="assets/images/gallery-12.jpeg" alt="Fruit tray" loading="lazy"><span>Fruit tray</span></a>
@@ -85,16 +374,63 @@
     </div>
   </div>
 </section>
+
+<!-- CTA BAND (same as home) -->
+<section class="cta">
+  <div class="cta-media"><img src="assets/images/home-img-4.jpeg" alt="Seasoned grilled shrimp" loading="lazy"></div>
+  <svg class="cta-swoosh" viewBox="0 0 404 130" aria-hidden="true">
+    <path class="sw-line" pathLength="100" stroke-width="1.2" opacity=".7" d="M-74 130Q10 44 196 8"/>
+    <path class="sw-line" pathLength="100" stroke-width="2.4" d="M-44 130Q36 36 226 3"/>
+    <path class="sw-ribbon" d="M-8 131Q70 28 250 -1L3000 -1 3000 3 262 3Q96 34 14 131Z"/>
+  </svg>
+  <div class="stage">
+    <div class="cta-copy reveal">
+      <h2>LET US CATER<br>YOUR NEXT EVENT</h2>
+      <p>Birthdays<span>|</span>Family Gatherings<span>|</span>Corporate Events<br>Community Events<span>|</span>Private In-Home Catering</p>
+    </div>
+    <a href="contact.html" class="btn-quote">GET A QUOTE <svg class="chev"><use href="#chev"/></svg></a>
+  </div>
+</section>
+
 </main>
 
+<!-- FOOTER (identical to home) -->
 <footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="f-brand"><img src="assets/images/logo.png" alt="Chef Jay LeSoul Catering" loading="lazy"><p>Private dining and full-service catering from Chef Jay LeSoul and his team — cooking with soul across Greater Cleveland.</p><div class="socials"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="YouTube">▶</a></div></div>
-    <div class="f-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="catering.html">Catering</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="cooking-in-the-hood.html">Cooking in the Hood</a></li><li><a href="contact.html">Book Now</a></li></ul></div>
-    <div class="f-contact"><h4>Contact Us</h4><ul><li><a href="tel:+12166737299">☎ &nbsp;(216) 673-7299</a></li><li><a href="mailto:hello@chefjaylesoul.com">✉ &nbsp;hello@chefjaylesoul.com</a></li><li>📍 &nbsp;Cleveland, OH</li></ul></div>
+  <div class="f-img"><img src="assets/images/gallery-13.jpeg" alt="" loading="lazy"></div>
+  <div class="stage">
+    <a class="logo f-logo" href="index.html" style="--s:60" aria-label="Chef Jay LeSoul Catering home">
+      <span class="l-top"><small>CHEF</small><svg class="l-hat"><use href="#hat"/></svg></span>
+      <span class="l-main"><b>JAY</b><i>LeSOUL</i></span>
+      <span class="l-sub">CATERING</span>
+    </a>
+    <div class="f-col f-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html"><i class="fa fa-angle-right"></i>Home</a></li>
+        <li><a href="about.html"><i class="fa fa-angle-right"></i>About</a></li>
+        <li><a href="catering.html"><i class="fa fa-angle-right"></i>Catering</a></li>
+        <li><a href="catering.html#menu"><i class="fa fa-angle-right"></i>Menu</a></li>
+        <li><a href="gallery.html"><i class="fa fa-angle-right"></i>Gallery</a></li>
+        <li><a href="cooking-in-the-hood.html"><i class="fa fa-angle-right"></i>Cooking in the Hood</a></li>
+        <li><a href="contact.html"><i class="fa fa-angle-right"></i>Contact</a></li>
+      </ul>
+    </div>
+    <div class="f-col f-contact">
+      <h4>Contact Us</h4>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><a href="tel:+12166737299">(216) 673-7299</a></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg><a href="mailto:hello@chefjaylesoul.com">hello@chefjaylesoul.com</a></li>
+        <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>Cleveland, OH</li>
+      </ul>
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7H16l.5-4h-3V9c0-.6.4-1 1-1z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15V9l5.2 3z"/></svg></a>
+      </div>
+    </div>
   </div>
-  <div class="footer-bottom">© <span id="year"></span> Chef Jay LeSoul Catering. All rights reserved.</div>
 </footer>
+
 <a href="#" class="to-top" id="toTop" aria-label="Back to top">↑</a>
 <script src="assets/js/script.js"></script>
 </body>

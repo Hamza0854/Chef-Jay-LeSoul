@@ -5,72 +5,490 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Contact Us | Chef Jay LeSoul Catering — (216) 673-7299</title>
 <meta name="description" content="Let's talk about your event. Call (216) 673-7299 or send Chef Jay LeSoul Catering a message.">
+<meta name="theme-color" content="#0a0a0a">
 <link rel="icon" href="assets/images/fav.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Kaushan+Script&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Mr+Dafoe&family=Oswald:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<style>
+/* =========================================================
+   CHEF JAY LeSOUL — CONTACT  (shares the home-page system)
+   ========================================================= */
+:root{
+  --u:clamp(.5px, calc(100vw / 1024), 1.6px);
+  --black:#0a0a0a;--red:#c8102e;--red-d:#8a0a1d;--gold:#d4af37;--gold-l:#f3d77a;
+  --goldgrad:linear-gradient(135deg,#8a6512 0%,#d4af37 24%,#fff0b0 48%,#d4af37 70%,#8a6512 100%);
+  --f-disp:'Anton',Impact,sans-serif;--f-head:'Oswald',sans-serif;--f-script:'Mr Dafoe',cursive;--f-body:'Poppins',system-ui,sans-serif;
+  --hh:calc(88*var(--u));--ease:cubic-bezier(.2,.75,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--f-body);background:var(--black);color:#222;overflow-x:hidden;line-height:1.4}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+button{font:inherit;border:0;background:none;cursor:pointer}
+.stage{position:relative;margin:0 auto}
+
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--goldgrad);z-index:1000}
+.to-top{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;background:var(--goldgrad);color:#1a1200;display:grid;place-items:center;font-size:20px;font-weight:700;box-shadow:0 10px 25px rgba(0,0,0,.35);opacity:0;visibility:hidden;transform:translateY(20px);transition:.4s var(--ease);z-index:800}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none!important}}
+
+/* ---------- buttons ---------- */
+.btn-red{display:inline-flex;align-items:center;justify-content:center;gap:calc(10*var(--u));background:linear-gradient(180deg,#dc1331,#9c0a21);color:#fff;font-family:var(--f-head);font-weight:500;letter-spacing:.05em;text-transform:uppercase;box-shadow:inset 0 0 0 1.5px rgba(245,205,110,.75),0 6px 16px rgba(200,16,46,.35);transition:transform .3s var(--ease),box-shadow .3s,filter .3s;white-space:nowrap}
+.btn-red:hover{transform:translateY(-2px);filter:brightness(1.08);box-shadow:inset 0 0 0 1.5px var(--gold-l),0 10px 24px rgba(200,16,46,.45)}
+.chev{width:.55em;height:.9em;flex-shrink:0;transition:transform .3s}
+.chev path{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+a:hover>.chev{transform:translateX(3px)}
+
+/* ---------- logo ---------- */
+.logo{display:inline-flex;flex-direction:column;align-items:flex-start;font-size:calc(var(--s)*var(--u));line-height:1;flex-shrink:0}
+.l-top{display:flex;align-items:flex-end;gap:.1em;height:.72em;margin-left:.45em}
+.l-top small{font-family:var(--f-head);font-weight:600;font-size:.27em;letter-spacing:.08em;color:var(--gold);margin-bottom:.06em}
+.l-hat{width:.55em;height:.95em;margin-bottom:4px;margin-left:-42px}
+.l-main{display:flex;gap:.1em;font-family:var(--f-disp);font-size:1em;letter-spacing:-.005em;line-height:1}
+.l-main b{font-weight:400;color:#fff}
+.l-main i{font-style:normal;color:var(--red);-webkit-text-stroke:.01em rgba(243,215,122,.55)}
+.l-sub{font-family:var(--f-head);font-weight:500;font-size:.22em;letter-spacing:1em;color:var(--gold);margin:.35em 0 0 1em}
+.hat-o{fill:none;stroke:url(#goldGrad);stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+
+/* ---------- header ---------- */
+.site-header{position:fixed;top:0;left:0;right:0;z-index:900;height:var(--hh);background:#0a0a0a;transition:box-shadow .3s}
+.site-header.scrolled{box-shadow:0 10px 30px rgba(0,0,0,.55)}
+.header-inner{display:flex;justify-content:space-between;align-items:center;height:100%;padding:0 calc(39*var(--u)) 0 calc(40*var(--u))}
+.site-header .logo{width:calc(182*var(--u))}
+.nav{display:flex;align-items:center;margin-left:calc(80*var(--u))}
+.nav-list{display:flex;gap:calc(23*var(--u))}
+.nav-list a{position:relative;display:block;padding:calc(6*var(--u)) 0;font-family:var(--f-head);font-weight:500;font-size:calc(12.3*var(--u));letter-spacing:.03em;text-transform:uppercase;color:#fff;transition:color .3s}
+.nav-list a::after{content:"";position:absolute;left:0;bottom:calc(-5*var(--u));height:calc(2*var(--u));width:0;background:var(--goldgrad);transition:width .35s var(--ease)}
+.nav-list a:hover,.nav-list a.active{color:#e2b64b}
+.nav-list a:hover::after,.nav-list a.active::after{width:100%}
+.nav-cta{display:none}
+.header-cta{margin-left:auto;width:calc(117*var(--u));height:calc(36*var(--u));border-radius:calc(5*var(--u));font-size:calc(13.5*var(--u))}
+.nav-toggle{display:none;width:44px;height:44px;flex-direction:column;justify-content:center;align-items:center;gap:6px;border-radius:10px;border:1px solid rgba(212,175,55,.4)}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--gold);transition:.35s var(--ease)}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+.nav-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:890;opacity:0;visibility:hidden;transition:.4s}
+.nav-backdrop.show{opacity:1;visibility:visible}
+body.nav-lock{overflow:hidden}
+
+/* =========================================================
+   CONTACT HERO — info left, form card right
+   ========================================================= */
+.phero{position:relative;margin-top:var(--hh);overflow:hidden;color:#1d1d1d;
+  background:
+    linear-gradient(118deg,rgba(0,0,0,0) 0 6%,rgba(0,0,0,.045) 12%,rgba(0,0,0,0) 19%),
+    linear-gradient(118deg,rgba(0,0,0,0) 0 36%,rgba(0,0,0,.04) 43%,rgba(0,0,0,0) 50%),
+    linear-gradient(160deg,#ffffff 0%,#fbfaf8 55%,#f2efea 100%)}
+.phero .stage{display:grid;grid-template-columns:1fr calc(440*var(--u));gap:calc(40*var(--u));align-items:start;padding:calc(44*var(--u)) calc(40*var(--u)) calc(60*var(--u)) calc(44*var(--u));position:relative;z-index:2}
+.phero-streak{position:absolute;top:0;bottom:0;right:calc(360*var(--u));width:calc(260*var(--u));z-index:1;pointer-events:none;overflow:visible;height: 100%;}
+.phero-swoosh{position:absolute;left:0;bottom:0;width:calc(430*var(--u));height:calc(56*var(--u));z-index:1;pointer-events:none}
+
+.eyebrow{display:inline-flex;align-items:center;gap:calc(10*var(--u));font-family:var(--f-head);font-weight:600;font-size:calc(12*var(--u));letter-spacing:.42em;color:var(--red);text-transform:uppercase}
+.eyebrow::before{content:"";width:calc(34*var(--u));height:calc(3*var(--u));border-radius:3px;background:var(--goldgrad)}
+.phero h1{margin-top:calc(10*var(--u));font-family:var(--f-disp);font-weight:400;font-size:calc(62*var(--u));line-height:.94;letter-spacing:-.005em;color:#111;text-shadow:0 2px 6px rgba(0,0,0,.1)}
+.phero h1 em{font-style:normal;color:var(--red);text-shadow:0 2px 8px rgba(200,16,46,.2)}
+.phero-script{position:relative;display:inline-block;margin:calc(8*var(--u)) 0 0 calc(4*var(--u));font-family:var(--f-script);font-size:calc(38*var(--u));line-height:1.1;color:#9b0d24;transform:rotate(-2deg);transform-origin:left center;white-space:nowrap}
+.phero-script .brush{position:absolute;left:3%;bottom:calc(-8*var(--u));width:94%;height:calc(14*var(--u));z-index:-1}
+.phero-copy{margin-top:calc(22*var(--u));max-width:calc(440*var(--u));font-size:calc(15*var(--u));font-weight:300;line-height:1.62;color:#2a2a2a}
+
+/* contact list — same gold circles as the home hero */
+.c-list{margin-top:calc(24*var(--u))}
+.c-list li{display:flex;align-items:center;gap:calc(12*var(--u));height:calc(46*var(--u))}
+.c-list a,.c-list span.txt{font-family:var(--f-head);font-weight:500;font-size:calc(24*var(--u));color:#111;white-space:nowrap;transition:color .3s}
+.c-list li+li a,.c-list li+li span.txt{font-size:calc(21*var(--u))}
+.c-list a:hover{color:var(--red)}
+.hc-ico{display:grid;place-items:center;width:calc(38*var(--u));height:calc(38*var(--u));border-radius:50%;flex-shrink:0;background:var(--goldgrad);box-shadow:0 4px 10px rgba(212,175,55,.4),inset 0 0 0 1.5px rgba(255,255,255,.35)}
+.hc-ico svg{width:52%;height:52%;color:#fff}
+.c-socials{display:flex;gap:calc(10*var(--u));margin-top:calc(18*var(--u))}
+.c-socials a{display:grid;place-items:center;width:calc(36*var(--u));height:calc(36*var(--u));border-radius:50%;background:var(--goldgrad);color:#111;box-shadow:0 4px 10px rgba(212,175,55,.35);transition:transform .3s var(--ease)}
+.c-socials a:hover{transform:translateY(-3px) rotate(8deg)}
+.c-socials svg{width:56%;height:56%}
+.c-hours{display:inline-flex;align-items:center;gap:calc(12*var(--u));margin-top:calc(22*var(--u));padding:calc(10*var(--u)) calc(16*var(--u));background:linear-gradient(135deg,#1a1a1a,#060606);color:#fff;border-radius:calc(8*var(--u));box-shadow:inset 0 0 0 2px var(--gold),0 12px 26px rgba(0,0,0,.3)}
+.c-hours b{font-family:var(--f-disp);font-weight:400;font-size:calc(26*var(--u));line-height:1;background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.c-hours span{font-family:var(--f-head);font-weight:500;font-size:calc(12.5*var(--u));letter-spacing:.04em;text-transform:uppercase;line-height:1.25}
+
+/* ---- form card ---- */
+.form-wrap{position:relative}
+.form-card{position:relative;padding:calc(30*var(--u)) calc(30*var(--u)) calc(28*var(--u));background:linear-gradient(160deg,#171717,#070707);border-radius:calc(8*var(--u));box-shadow:0 24px 60px rgba(0,0,0,.35),inset 0 0 0 2px var(--gold);clip-path:polygon(0 0,calc(100% - 44*var(--u)) 0,100% calc(44*var(--u)),100% 100%,calc(44*var(--u)) 100%,0 calc(100% - 44*var(--u)))}
+.form-card::before{content:"";position:absolute;top:0;right:0;width:calc(44*var(--u));height:calc(44*var(--u));background:var(--goldgrad);clip-path:polygon(100% 0,0 0,100% 100%)}
+.form-card::after{content:"";position:absolute;bottom:0;left:0;width:calc(44*var(--u));height:calc(44*var(--u));background:var(--red);clip-path:polygon(0 100%,0 0,100% 100%)}
+.p-acc{position:absolute;width:0;height:0;pointer-events:none;z-index:2}
+.p-red{top:calc(-16*var(--u));left:calc(-18*var(--u));border-left:calc(28*var(--u)) solid transparent;border-right:calc(28*var(--u)) solid transparent;border-top:calc(48*var(--u)) solid #c8102e;filter:drop-shadow(0 6px 10px rgba(200,16,46,.35))}
+.p-blk{bottom:calc(-16*var(--u));right:calc(56*var(--u));border-left:calc(26*var(--u)) solid transparent;border-right:calc(26*var(--u)) solid transparent;border-top:calc(44*var(--u)) solid #111}
+.p-gold{top:calc(90*var(--u));right:calc(-22*var(--u));border-left:calc(18*var(--u)) solid transparent;border-right:calc(18*var(--u)) solid transparent;border-bottom:calc(30*var(--u)) solid #d4af37;filter:drop-shadow(0 4px 8px rgba(212,175,55,.4))}
+.form-head{margin-bottom:calc(18*var(--u))}
+.form-head h2{font-family:var(--f-disp);font-weight:400;font-size:calc(26*var(--u));line-height:1;color:#fff}
+.form-head h2 em{font-style:normal;background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.form-head p{margin-top:calc(6*var(--u));font-size:calc(13*var(--u));font-weight:300;color:#cfcfcf}
+
+.field{position:relative;margin-bottom:calc(14*var(--u))}
+.field input,.field select,.field textarea{width:100%;height:calc(46*var(--u));padding:calc(14*var(--u)) calc(14*var(--u)) 0;font-family:var(--f-body);font-size:calc(14*var(--u));color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(212,175,55,.35);border-radius:calc(5*var(--u));outline:0;transition:border-color .3s,box-shadow .3s,background .3s;appearance:none;-webkit-appearance:none}
+.field textarea{height:auto;min-height:calc(120*var(--u));padding-top:calc(20*var(--u));resize:vertical}
+.field select{padding-top:0;color:#bdbdbd;background-image:linear-gradient(45deg,transparent 50%,var(--gold) 50%),linear-gradient(135deg,var(--gold) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px,6px 6px;background-repeat:no-repeat}
+.field select:valid{color:#fff}
+.field select option{color:#111;background:#fff}
+.field label{position:absolute;left:calc(14*var(--u));top:calc(14*var(--u));font-size:calc(13.5*var(--u));color:#bdbdbd;pointer-events:none;transition:.25s var(--ease)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold);background:rgba(255,255,255,.1);box-shadow:0 0 0 3px rgba(212,175,55,.18)}
+.field input:focus~label,.field input:not(:placeholder-shown)~label,.field textarea:focus~label,.field textarea:not(:placeholder-shown)~label{top:calc(5*var(--u));font-size:calc(10.5*var(--u));letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.field.error input,.field.error select,.field.error textarea{border-color:#ff4d6a;box-shadow:0 0 0 3px rgba(255,77,106,.18)}
+.field.error::after{content:"Required";position:absolute;right:calc(12*var(--u));top:calc(-8*var(--u));padding:2px 8px;font-family:var(--f-head);font-size:calc(10*var(--u));letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--red);border-radius:20px}
+.btn-send{width:100%;height:calc(50*var(--u));margin-top:calc(6*var(--u));border-radius:calc(6*var(--u));font-size:calc(16*var(--u));letter-spacing:.08em;gap:calc(12*var(--u))}
+.form-success{display:none;margin-top:calc(14*var(--u));padding:calc(12*var(--u)) calc(14*var(--u));font-size:calc(13*var(--u));line-height:1.5;color:#1a1200;background:var(--goldgrad);border-radius:calc(5*var(--u))}
+.form-success.show{display:block}
+.form-success b{font-weight:600}
+.form-note{margin-top:calc(12*var(--u));font-size:calc(11.5*var(--u));color:#9a9a9a;text-align:center}
+
+/* chef cutout under the info column */
+.c-chef{position:relative;margin-top:calc(26*var(--u));width:calc(300*var(--u));height:calc(190*var(--u))}
+.c-chef::before{content:"";position:absolute;left:calc(20*var(--u));right:calc(20*var(--u));bottom:0;height:calc(12*var(--u));border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.35),transparent 70%)}
+.c-chef img{position:absolute;bottom:0;left:0;width:100%;height:100%;object-fit:contain;object-position:left bottom;filter:drop-shadow(0 10px 20px rgba(0,0,0,.25))}
+
+/* =========================================================
+   INFO STRIP — dark band
+   ========================================================= */
+.info{color:#fff;background:radial-gradient(ellipse at 50% 0%,#231d0c 0%,rgba(10,10,10,0) 55%),radial-gradient(circle at 15% 80%,#1b1b1b,transparent 40%),#0b0b0b}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);padding:calc(34*var(--u)) 0}
+.inf{display:flex;flex-direction:column;align-items:center;text-align:center;padding:calc(6*var(--u)) calc(22*var(--u));border-right:1px solid rgba(255,255,255,.12);transition:transform .4s var(--ease)}
+.inf:last-child{border-right:0}
+.inf:hover{transform:translateY(-4px)}
+.inf svg{width:calc(56*var(--u));height:calc(50*var(--u));fill:url(#goldGrad);filter:drop-shadow(0 3px 6px rgba(212,175,55,.25))}
+.inf h3{margin:calc(10*var(--u)) 0 calc(5*var(--u));font-family:var(--f-head);font-weight:500;font-size:calc(18*var(--u));letter-spacing:.02em;text-transform:uppercase}
+.inf p{font-size:calc(13.5*var(--u));font-weight:300;line-height:1.4;color:#d0d0d0;max-width:calc(260*var(--u))}
+
+/* ---------- CTA BAND (same as home) ---------- */
+.cta{position:relative;height:calc(130*var(--u));overflow:hidden;color:#fff;background:radial-gradient(ellipse at 22% 50%,#b8112d 0%,#8a0a1d 55%,#56050f 100%)}
+.cta::before{content:"";position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(115deg,transparent 0 44px,rgba(255,255,255,.025) 44px 46px)}
+.cta-media{position:absolute;top:0;bottom:0;right:0;left:calc(50% + 108*var(--u));
+  clip-path:polygon(calc(14*var(--u)) 100%,calc(50*var(--u)) 72.5%,calc(93*var(--u)) 48.9%,calc(142.6*var(--u)) 29.4%,calc(199*var(--u)) 13.8%,calc(262*var(--u)) 2.3%,100% 2.3%,100% 100%)}
+.cta-media img{width:100%;height:100%;object-fit:cover;object-position:center 45%;animation:kb 14s ease-in-out infinite alternate}
+.cta-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.18),transparent 30%)}
+@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.12)}}
+.cta-swoosh{position:absolute;top:0;left:calc(50% + 108*var(--u));width:calc(404*var(--u));height:calc(130*var(--u));overflow:visible;pointer-events:none;z-index:1}
+.sw-ribbon{fill:url(#goldGradH);filter:drop-shadow(0 0 5px rgba(246,226,122,.45));opacity:0;animation:fadeIn 1s var(--ease) .2s forwards}
+.sw-line{fill:none;stroke:url(#goldGradH);stroke-linecap:round;stroke-dasharray:100;stroke-dashoffset:100;animation:draw 1.6s var(--ease) .5s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fadeIn{to{opacity:1}}
+.cta .stage{height:100%;z-index:2}
+.cta-copy{position:absolute;left:calc(50*var(--u));top:calc(12*var(--u))}
+.cta-copy h2{font-family:var(--f-disp);font-weight:400;font-size:calc(29*var(--u));line-height:1;letter-spacing:.01em;text-shadow:0 2px 8px rgba(0,0,0,.3)}
+.cta-copy p{margin-top:calc(8*var(--u));font-size:calc(13.6*var(--u));font-weight:300;line-height:1.45;color:#f6dfe3}
+.cta-copy p span{margin:0 .4em;opacity:.8}
+.btn-quote{position:absolute;left:calc(410*var(--u));top:calc(32*var(--u));display:inline-flex;align-items:center;justify-content:center;gap:calc(14*var(--u));width:calc(200*var(--u));height:calc(44*var(--u));border-radius:calc(6*var(--u));background:var(--goldgrad);background-size:200% auto;animation:shine 5s linear infinite;color:#2a1a00;font-family:var(--f-head);font-weight:600;font-size:calc(17*var(--u));letter-spacing:.04em;box-shadow:0 8px 20px rgba(0,0,0,.35),inset 0 0 0 1px rgba(255,255,255,.45);transition:transform .3s var(--ease)}
+.btn-quote:hover{transform:translateY(-2px)}
+@keyframes shine{to{background-position:200% center}}
+
+/* ---------- FOOTER (same as home) ---------- */
+.site-footer{position:relative;height:calc(176*var(--u));overflow:hidden;background:#070707;color:#fff;border-top:1px solid rgba(212,175,55,.35)}
+.site-footer .stage{height:100%}
+.f-img{position:absolute;top:0;right:0;bottom:0;width:calc(265*var(--u))}
+.f-img img{width:100%;height:100%;object-fit:cover}
+.f-img::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#070707 0%,rgba(7,7,7,.55) 30%,rgba(7,7,7,0) 65%)}
+.f-logo{position:absolute;left:calc(38*var(--u));top:calc(8*var(--u))}
+.f-col{position:absolute;top:calc(18*var(--u))}
+.f-links{left:calc(318*var(--u))}
+.f-contact{left:calc(555*var(--u))}
+.f-col h4{font-family:var(--f-head);font-weight:500;font-size:calc(15*var(--u));letter-spacing:.02em;margin-bottom:calc(10*var(--u))}
+.f-links ul{display:grid;grid-template-columns:calc(73*var(--u)) auto;grid-auto-flow:column;grid-template-rows:repeat(4,auto);row-gap:calc(8*var(--u));gap: 14px;}
+.f-links a{display:inline-flex;align-items:center;gap:calc(8*var(--u));font-size:calc(12*var(--u));color:#e8e8e8;transition:color .3s}
+.f-links a .chev{width:calc(6*var(--u));height:calc(10*var(--u))}
+.f-links a:hover{color:var(--gold-l)}
+.f-contact li{display:flex;align-items:center;gap:calc(12*var(--u));margin-bottom:calc(9*var(--u));font-size:calc(12.5*var(--u));color:#e8e8e8}
+.f-contact li svg{width:calc(15*var(--u));height:calc(15*var(--u));color:var(--gold);flex-shrink:0}
+.f-contact a:hover{color:var(--gold-l)}
+.socials{display:flex;gap:calc(8*var(--u));margin:calc(12*var(--u)) 0 0 calc(22*var(--u))}
+.socials a{display:grid;place-items:center;width:calc(24*var(--u));height:calc(24*var(--u));border-radius:50%;background:var(--goldgrad);color:#111;transition:transform .3s var(--ease)}
+.socials a:hover{transform:translateY(-3px) rotate(8deg)}
+.socials svg{width:58%;height:58%}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media(max-width:991px){
+  :root{--hh:68px}
+  .header-inner{padding:0 16px;width:100%}
+  .site-header .logo{font-size:30px;width:auto}
+  .nav-toggle{display:flex}
+  .header-cta{margin-right:12px;height:38px;width:auto;padding:0 16px;font-size:13px;border-radius:5px}
+  .nav{position:fixed;top:var(--hh);right:0;bottom:0;width:min(86vw,340px);margin:0;flex-direction:column;align-items:stretch;padding:26px;background:#0d0d0d;border-left:1px solid rgba(212,175,55,.3);transform:translateX(100%);transition:transform .45s var(--ease);overflow-y:auto;z-index:960;box-shadow:-20px 0 60px rgba(0,0,0,.6)}
+  .nav.open{transform:none}
+  .nav-list{flex-direction:column;gap:0}
+  .nav-list a{font-size:17px;padding:14px 0;border-bottom:1px solid rgba(212,175,55,.15)}
+  .nav-list a::after{display:none}
+  .nav-cta{display:inline-flex;margin-top:22px;height:48px;border-radius:6px;font-size:15px}
+}
+@media(max-width:767px){
+  .header-cta{display:none}
+
+  .phero .stage{grid-template-columns:1fr;gap:34px;padding:34px 20px 70px}
+  .eyebrow{font-size:11px;letter-spacing:.38em}
+  .phero h1{font-size:44px;margin-top:10px}
+  .phero-script{font-size:28px;white-space:normal}
+  .phero-copy{font-size:15px;margin-top:18px;max-width:none}
+  .c-list{margin-top:20px}
+  .c-list li{height:44px;gap:12px}
+  .c-list a,.c-list span.txt{font-size:20px;white-space:normal}
+  .c-list li+li a,.c-list li+li span.txt{font-size:17px}
+  .hc-ico{width:36px;height:36px}
+  .c-socials{gap:10px;margin-top:16px}
+  .c-socials a{width:38px;height:38px}
+  .c-hours{margin-top:20px;padding:10px 14px;gap:10px;border-radius:8px}
+  .c-hours b{font-size:24px}
+  .c-hours span{font-size:12px}
+  .c-chef{display:none}
+  .phero-streak{right:-60px;width:220px;opacity:.6}
+  .phero-swoosh{width:260px;height:36px}
+
+  .form-card{padding:26px 20px 24px;border-radius:8px;clip-path:polygon(0 0,calc(100% - 34px) 0,100% 34px,100% 100%,34px 100%,0 calc(100% - 34px))}
+  .form-card::before,.form-card::after{width:34px;height:34px}
+  .p-red{top:-12px;left:-10px;border-left-width:22px;border-right-width:22px;border-top-width:38px}
+  .p-blk{bottom:-12px;right:40px;border-left-width:20px;border-right-width:20px;border-top-width:34px}
+  .p-gold{top:70px;right:-12px;border-left-width:14px;border-right-width:14px;border-bottom-width:24px}
+  .form-head{margin-bottom:16px}
+  .form-head h2{font-size:24px}
+  .form-head p{font-size:13px}
+  .field{margin-bottom:12px}
+  .field input,.field select,.field textarea{height:48px;padding:16px 14px 0;font-size:15px;border-radius:6px}
+  .field textarea{height:auto;min-height:120px;padding-top:22px}
+  .field select{padding-top:0}
+  .field label{left:14px;top:15px;font-size:14px}
+  .field input:focus~label,.field input:not(:placeholder-shown)~label,.field textarea:focus~label,.field textarea:not(:placeholder-shown)~label{top:6px;font-size:10.5px}
+  .field.error::after{font-size:10px;right:12px;top:-8px}
+  .btn-send{height:50px;font-size:16px;border-radius:6px}
+  .form-success{font-size:13px;padding:12px 14px;border-radius:6px}
+  .form-note{font-size:11.5px}
+
+  .info-grid{grid-template-columns:1fr;row-gap:24px;padding:30px 0}
+  .inf{border-right:0;padding:4px 20px}
+  .inf svg{width:48px;height:42px}
+  .inf h3{font-size:16px;margin:8px 0 4px}
+  .inf p{font-size:13.5px;max-width:none}
+
+  .cta{height:auto;padding:30px 20px 200px}
+  .cta .stage{width:100%}
+  .cta-copy{position:static}
+  .cta-copy h2{font-size:30px}
+  .cta-copy p{font-size:13px;margin-top:10px}
+  .btn-quote{position:relative;left:auto;top:auto;margin-top:18px;width:auto;height:46px;padding:0 24px;font-size:16px;gap:10px;border-radius:6px}
+  .cta-media{top:auto;left:0;height:170px;clip-path:polygon(0 32%,100% 0,100% 100%,0 100%)}
+  .cta-swoosh{display:none}
+
+  .site-footer{height:auto;padding:40px 20px 30px}
+  .site-footer .stage{width:100%;display:grid;gap:30px;position:relative;z-index:2}
+  .f-img{width:100%;opacity:.18}
+  .f-img::before{display:none}
+  .f-logo,.f-col{position:static}
+  .f-logo{font-size:52px}
+  .f-col h4{font-size:18px;margin-bottom:12px}
+  .f-links ul{grid-template-columns:130px auto;row-gap:10px}
+  .f-links a{font-size:14px;gap:8px}
+  .f-links a .chev{width:6px;height:10px}
+  .f-contact li{font-size:14px;gap:12px;margin-bottom:12px}
+  .f-contact li svg{width:18px;height:18px}
+  .socials{margin:14px 0 0;gap:10px}
+  .socials a{width:38px;height:38px}
+  .l-hat{margin-bottom:2px;margin-left:-26px}
+}
+</style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6512"/><stop offset=".35" stop-color="#d4af37"/><stop offset=".55" stop-color="#fff2b3"/><stop offset=".8" stop-color="#d4af37"/><stop offset="1" stop-color="#8a6512"/></linearGradient></defs></svg>
+
+<!-- shared SVG defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6512"/><stop offset=".35" stop-color="#d4af37"/><stop offset=".55" stop-color="#fff2b3"/><stop offset=".8" stop-color="#d4af37"/><stop offset="1" stop-color="#8a6512"/></linearGradient>
+    <linearGradient id="goldGradH" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#9a7418"/><stop offset=".3" stop-color="#e2bf52"/><stop offset=".5" stop-color="#fff2b3"/><stop offset=".75" stop-color="#d4af37"/><stop offset="1" stop-color="#b08a26"/></linearGradient>
+    <linearGradient id="goldGradV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0b0"/><stop offset=".4" stop-color="#d4af37"/><stop offset="1" stop-color="#8a6512"/></linearGradient>
+    <symbol id="hat" viewBox="0 0 102 80"><g class="hat-o"><path d="M26 54C12 53 4 44 6 33 8 22 20 16 31 20 33 9 43 3 53 4c9 1 17 7 19 15 10-5 23 1 24 12 1 11-7 20-19 22"/><path d="M26 54v20h51V54M26 63h51M40 63v11M63 63v11"/><path d="M38 34c2-6 4-10 8-13M60 34c-1-5-3-9-6-12"/></g></symbol>
+    <symbol id="chev" viewBox="0 0 10 16"><path d="M2.5 2l6 6-6 6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v7h4v-7H16l.5-4h-3V9c0-.6.4-1 1-1z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></symbol>
+    <symbol id="i-yt" viewBox="0 0 24 24"><path fill="currentColor" d="M22 8.2a3 3 0 0 0-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 0 0 2 8.2 31 31 0 0 0 1.6 12 31 31 0 0 0 2 15.8a3 3 0 0 0 2.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .4-3.8 31 31 0 0 0-.4-3.8zM10 15V9l5.2 3z"/></symbol>
+  </defs>
+</svg>
+
 <div class="progress" id="progress"></div>
 
+<!-- HEADER (identical to home) -->
 <header class="site-header" id="header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="Chef Jay LeSoul Catering home"><svg class="hat" viewBox="0 0 64 48"><path d="M12 32c-6-1-9-6-8-11 1-5 6-8 11-7 1-6 7-10 13-10s12 4 13 10c5-1 10 2 11 7s-2 10-8 11v9a3 3 0 0 1-3 3H15a3 3 0 0 1-3-3z"/></svg><span class="brand-text"><b>CHEF JAY <i>LeSOUL</i></b><small>CATERING</small></span></a>
+  <div class="stage header-inner">
+    <a class="logo" href="index.html" style="--s:40" aria-label="Chef Jay LeSoul Catering home">
+      <span class="l-top"><small>CHEF</small><svg class="l-hat"><use href="#hat"/></svg></span>
+      <span class="l-main"><b>JAY</b><i>LeSOUL</i></span>
+      <span class="l-sub">CATERING</span>
+    </a>
     <nav class="nav" id="nav">
-      <ul class="nav-list"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="catering.html">Catering</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="cooking-in-the-hood.html">Cooking in the Hood</a></li><li><a href="contact.html">Contact</a></li></ul>
-      <a class="btn btn-red nav-cta" href="contact.html">Book Now</a>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="catering.html">Catering</a></li>
+        <li><a href="catering.html#menu">Menu</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="cooking-in-the-hood.html">Cooking in the Hood</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="btn-red nav-cta" href="contact.html">Book Now</a>
     </nav>
-    <a class="btn btn-red header-cta" href="contact.html">Book Now</a>
+    <a class="btn-red header-cta" href="contact.html">Book Now</a>
     <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
 <main id="main">
-<section class="page-hero">
-  <div class="hero-glow"></div>
-  <div class="container contact-grid">
-    <div class="contact-info">
-      <span class="eyebrow red reveal" data-reveal="up">Contact Us</span>
-      <h1 class="page-title reveal" data-reveal="up" data-delay="100">Contact <span class="r">Us</span></h1>
-      <p class="script reveal" data-reveal="up" data-delay="200">Let's Talk About Your Event</p>
-      <ul class="contact-list reveal" data-reveal="up" data-delay="300">
-        <li><span class="c-ico">☎</span><a href="tel:+12166737299">(216) 673-7299</a></li>
-        <li><span class="c-ico">✉</span><a href="mailto:hello@chefjaylesoul.com">hello@chefjaylesoul.com</a></li>
-        <li><span class="c-ico">📍</span><span>Cleveland, OH</span></li>
+
+<!-- ========================= CONTACT HERO ========================= -->
+<section class="phero">
+  <svg class="phero-streak" viewBox="0 0 260 500" preserveAspectRatio="none" aria-hidden="true">
+    <polygon points="150,0 236,0 110,500 24,500" fill="url(#goldGradV)" opacity=".5"/>
+    <polygon points="212,0 236,0 110,500 86,500" fill="#fff6cc" opacity=".5"/>
+  </svg>
+
+  <div class="stage">
+    <!-- left: info -->
+    <div class="c-info reveal">
+      <span class="eyebrow">Contact Us</span>
+      <h1>CONTACT <em>US</em></h1>
+      <p class="phero-script">Let's Talk About Your Event
+        <svg class="brush" viewBox="0 0 440 40" preserveAspectRatio="none" aria-hidden="true"><path d="M4 30C90 18 230 8 436 5 300 14 170 22 70 34 40 37 14 38 4 30Z" fill="url(#goldGrad)"/></svg>
+      </p>
+      <p class="phero-copy">Tell us the date, the headcount and the vibe — Chef Jay will build a menu and get back to you with a quote. Calls and texts welcome.</p>
+
+      <ul class="c-list">
+        <li><span class="hc-ico"><svg><use href="#i-phone"/></svg></span><a href="tel:+12166737299">(216) 673-7299</a></li>
+        <li><span class="hc-ico"><svg><use href="#i-mail"/></svg></span><a href="mailto:hello@chefjaylesoul.com">hello@chefjaylesoul.com</a></li>
+        <li><span class="hc-ico"><svg><use href="#i-pin"/></svg></span><span class="txt">Cleveland, OH &amp; surrounding areas</span></li>
       </ul>
-      <div class="socials reveal" data-reveal="up" data-delay="400"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="YouTube">▶</a></div>
-      <div class="contact-chef reveal" data-reveal="up" data-delay="500"><img src="assets/images/hero-img-bg.png" alt="Chef Jay LeSoul"></div>
+
+      <div class="c-socials">
+        <a href="#" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg><use href="#i-yt"/></svg></a>
+      </div>
+
+      <div class="c-hours"><b>24h</b><span>Typical reply time<br>Mon – Sat</span></div>
+
+      <div class="c-chef"><img src="assets/images/hero-img-bg.png" alt="Chef Jay LeSoul"></div>
     </div>
-    <form class="contact-form reveal" data-reveal="right" id="contactForm" novalidate>
-      <div class="field"><input type="text" name="name" id="name" placeholder=" " required><label for="name">Your Name</label></div>
-      <div class="field"><input type="email" name="email" id="email" placeholder=" " required><label for="email">Email Address</label></div>
-      <div class="field"><input type="tel" name="phone" id="phone" placeholder=" " required><label for="phone">Phone Number</label></div>
-      <div class="field"><select name="type" id="type" required>
-        <option value="" disabled selected>Event Type</option>
-        <option value="private">Private In-Home Catering</option>
-        <option value="birthday">Birthday / Family Gathering</option>
-        <option value="corporate">Corporate Event</option>
-        <option value="community">Community Event / Cooking in the Hood</option>
-        <option value="other">Other</option>
-      </select></div>
-      <div class="field"><textarea name="message" id="message" rows="5" placeholder=" " required></textarea><label for="message">Message</label></div>
-      <button type="submit" class="btn btn-red btn-block btn-lg">Send Message</button>
-      <div class="form-success" id="formSuccess"><b>✓ Thank you!</b> Your email app has opened with your message — hit send and we'll be in touch soon.</div>
-    </form>
+
+    <!-- right: form -->
+    <div class="form-wrap reveal" data-delay="150">
+      <span class="p-acc p-red" aria-hidden="true"></span>
+      <span class="p-acc p-gold" aria-hidden="true"></span>
+      <span class="p-acc p-blk" aria-hidden="true"></span>
+      <form class="form-card" id="contactForm" novalidate>
+        <div class="form-head">
+          <h2>SEND A <em>MESSAGE</em></h2>
+          <p>We'll reply with availability and a quote.</p>
+        </div>
+        <div class="field"><input type="text" name="name" id="name" placeholder=" " required><label for="name">Your Name</label></div>
+        <div class="field"><input type="email" name="email" id="email" placeholder=" " required><label for="email">Email Address</label></div>
+        <div class="field"><input type="tel" name="phone" id="phone" placeholder=" " required><label for="phone">Phone Number</label></div>
+        <div class="field"><select name="type" id="type" required>
+          <option value="" disabled selected>Event Type</option>
+          <option value="private">Private In-Home Catering</option>
+          <option value="birthday">Birthday / Family Gathering</option>
+          <option value="corporate">Corporate Event</option>
+          <option value="community">Community Event / Cooking in the Hood</option>
+          <option value="other">Other</option>
+        </select></div>
+        <div class="field"><textarea name="message" id="message" rows="5" placeholder=" " required></textarea><label for="message">Message — date, guests, location</label></div>
+        <button type="submit" class="btn-red btn-send">Send Message <svg class="chev"><use href="#chev"/></svg></button>
+        <div class="form-success" id="formSuccess"><b>✓ Thank you!</b> Your email app has opened with your message — hit send and we'll be in touch soon.</div>
+        <p class="form-note">Prefer to talk? Call <a href="tel:+12166737299" style="color:#f3d77a">(216) 673-7299</a></p>
+      </form>
+    </div>
   </div>
-  <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,42 C240,92 480,2 720,42 C960,82 1200,2 1440,42 L1440,80 L0,80 Z"/></svg>
+
+  <svg class="phero-swoosh" viewBox="0 0 430 56" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 56V20C120 38 290 46 430 56Z" fill="url(#goldGradH)"/>
+    <path d="M0 14C130 32 300 42 430 54" fill="none" stroke="#fff6cc" stroke-width="2" opacity=".85"/>
+  </svg>
 </section>
+
+<!-- INFO STRIP -->
+<section class="info">
+  <div class="stage info-grid">
+    <div class="inf reveal">
+      <svg viewBox="0 0 64 56"><path fill-rule="evenodd" d="M11 8h42a5 5 0 0 1 5 5v37a5 5 0 0 1-5 5H11a5 5 0 0 1-5-5V13a5 5 0 0 1 5-5Zm-1 14v28a1 1 0 0 0 1 1h42a1 1 0 0 0 1-1V22Z"/><rect x="17" y="2" width="4.5" height="12" rx="2.25"/><rect x="42.5" y="2" width="4.5" height="12" rx="2.25"/><rect x="14" y="27" width="6" height="5" rx="1"/><rect x="23.5" y="27" width="6" height="5" rx="1"/><rect x="33" y="27" width="6" height="5" rx="1"/><rect x="42.5" y="27" width="6" height="5" rx="1"/><rect x="14" y="36" width="6" height="5" rx="1"/><rect x="23.5" y="36" width="6" height="5" rx="1"/></svg>
+      <h3>Book Early</h3><p>Weekends fill fast — reach out 2–3 weeks ahead for the best availability.</p>
+    </div>
+    <div class="inf reveal" data-delay="100">
+      <svg viewBox="0 0 64 56"><path d="M12 10h40a4 4 0 0 1 4 4v24a4 4 0 0 1-4 4H30l-12 10V42h-6a4 4 0 0 1-4-4V14a4 4 0 0 1 4-4z"/><rect x="18" y="20" width="28" height="4" rx="2" fill="#0b0b0b"/><rect x="18" y="28" width="18" height="4" rx="2" fill="#0b0b0b"/></svg>
+      <h3>Tell Us Everything</h3><p>Date, guest count, venue, dietary needs — the more we know, the faster your quote.</p>
+    </div>
+    <div class="inf reveal" data-delay="200">
+      <svg viewBox="0 0 64 56"><path d="M32 6a7 7 0 1 1 0 14 7 7 0 0 1 0-14z"/><path d="M14 34c0-8 8-12 18-12s18 4 18 12v4H14z"/><path d="M6 44h52v6H6z"/></svg>
+      <h3>Serving Greater Cleveland</h3><p>In-home, venues, offices and community spaces across the Cleveland area.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta">
+  <div class="cta-media"><img src="assets/images/home-img-4.jpeg" alt="Seasoned grilled shrimp" loading="lazy"></div>
+  <svg class="cta-swoosh" viewBox="0 0 404 130" aria-hidden="true">
+    <path class="sw-line" pathLength="100" stroke-width="1.2" opacity=".7" d="M-74 130Q10 44 196 8"/>
+    <path class="sw-line" pathLength="100" stroke-width="2.4" d="M-44 130Q36 36 226 3"/>
+    <path class="sw-ribbon" d="M-8 131Q70 28 250 -1L3000 -1 3000 3 262 3Q96 34 14 131Z"/>
+  </svg>
+  <div class="stage">
+    <div class="cta-copy reveal">
+      <h2>RATHER TALK<br>IT THROUGH?</h2>
+      <p>Chef Jay picks up<span>|</span>Mon – Sat<br>Call or text and we'll plan it together</p>
+    </div>
+    <a href="tel:+12166737299" class="btn-quote">(216) 673-7299</a>
+  </div>
+</section>
+
 </main>
 
+<!-- FOOTER (identical to home) -->
 <footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="f-brand"><img src="assets/images/logo.png" alt="Chef Jay LeSoul Catering" loading="lazy"><p>Private dining and full-service catering from Chef Jay LeSoul and his team — cooking with soul across Greater Cleveland.</p><div class="socials"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="YouTube">▶</a></div></div>
-    <div class="f-links"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="catering.html">Catering</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="cooking-in-the-hood.html">Cooking in the Hood</a></li><li><a href="contact.html">Book Now</a></li></ul></div>
-    <div class="f-contact"><h4>Contact Us</h4><ul><li><a href="tel:+12166737299">☎ &nbsp;(216) 673-7299</a></li><li><a href="mailto:hello@chefjaylesoul.com">✉ &nbsp;hello@chefjaylesoul.com</a></li><li>📍 &nbsp;Cleveland, OH</li></ul></div>
+  <div class="f-img"><img src="assets/images/gallery-13.jpeg" alt="" loading="lazy"></div>
+  <div class="stage">
+    <a class="logo f-logo" href="index.html" style="--s:60" aria-label="Chef Jay LeSoul Catering home">
+      <span class="l-top"><small>CHEF</small><svg class="l-hat"><use href="#hat"/></svg></span>
+      <span class="l-main"><b>JAY</b><i>LeSOUL</i></span>
+      <span class="l-sub">CATERING</span>
+    </a>
+    <div class="f-col f-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html"><i class="fa fa-angle-right"></i>Home</a></li>
+        <li><a href="about.html"><i class="fa fa-angle-right"></i>About</a></li>
+        <li><a href="catering.html"><i class="fa fa-angle-right"></i>Catering</a></li>
+        <li><a href="catering.html#menu"><i class="fa fa-angle-right"></i>Menu</a></li>
+        <li><a href="gallery.html"><i class="fa fa-angle-right"></i>Gallery</a></li>
+        <li><a href="cooking-in-the-hood.html"><i class="fa fa-angle-right"></i>Cooking in the Hood</a></li>
+        <li><a href="contact.html"><i class="fa fa-angle-right"></i>Contact</a></li>
+      </ul>
+    </div>
+    <div class="f-col f-contact">
+      <h4>Contact Us</h4>
+      <ul>
+        <li><svg><use href="#i-phone"/></svg><a href="tel:+12166737299">(216) 673-7299</a></li>
+        <li><svg><use href="#i-mail"/></svg><a href="mailto:hello@chefjaylesoul.com">hello@chefjaylesoul.com</a></li>
+        <li><svg><use href="#i-pin"/></svg>Cleveland, OH</li>
+      </ul>
+      <div class="socials">
+        <a href="#" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+        <a href="#" aria-label="YouTube"><svg><use href="#i-yt"/></svg></a>
+      </div>
+    </div>
   </div>
-  <div class="footer-bottom">© <span id="year"></span> Chef Jay LeSoul Catering. All rights reserved.</div>
 </footer>
+
 <a href="#" class="to-top" id="toTop" aria-label="Back to top">↑</a>
 <script src="assets/js/script.js"></script>
 </body>
