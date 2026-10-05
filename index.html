@@ -115,7 +115,7 @@ body.nav-lock{overflow:hidden}
 .wm-script{position:relative;display:inline-block;margin:calc(2*var(--hu)) 0 0 calc(26*var(--hu));font-family:var(--f-script);font-size:calc(57*var(--hu));line-height:1.1;color:#9b0d24;white-space:nowrap;
   transform:rotate(-3deg);transform-origin:left center;text-shadow:0 2px 4px rgba(0,0,0,.08)}
 .brush{position:absolute;left:4%;bottom:calc(-10*var(--hu));width:96%;height:calc(16*var(--hu));z-index:-1}
-.hero-tag{margin-top:calc(22*var(--hu));font-size:calc(14.5*var(--hu));font-weight:400;letter-spacing:.13em;line-height:1.4;color:#1d1d1d;white-space:nowrap}
+.hero-tag{margin-top:calc(22*var(--hu));font-size:calc(13.5*var(--hu));font-weight:400;letter-spacing:.13em;line-height:1.4;color:#1d1d1d;white-space:nowrap}
 .hero-tag i{display:inline-block;width:calc(14*var(--hu))}
 .btn-book{width:calc(273*var(--hu));height:calc(41*var(--hu));margin:calc(7*var(--hu)) 0 0 calc(58*var(--hu));border-radius:calc(6*var(--hu));font-size:calc(17*var(--hu));letter-spacing:.06em;gap:calc(16*var(--hu))}
 .hero-contact{margin:calc(6*var(--hu)) 0 0 calc(7*var(--hu))}
@@ -193,7 +193,7 @@ body.nav-lock{overflow:hidden}
 .f-links{left:calc(318*var(--u))}
 .f-contact{left:calc(555*var(--u))}
 .f-col h4{font-family:var(--f-head);font-weight:500;font-size:calc(15*var(--u));letter-spacing:.02em;margin-bottom:calc(10*var(--u))}
-.f-links ul{display:grid;grid-template-columns:calc(73*var(--u)) auto;grid-auto-flow:column;grid-template-rows:repeat(4,auto);row-gap:calc(8*var(--u))}
+.f-links ul{display:grid;grid-template-columns:calc(73*var(--u)) auto;grid-auto-flow:column;grid-template-rows:repeat(4,auto);row-gap:calc(8*var(--u));gap: 14px;}
 .f-links a{display:inline-flex;align-items:center;gap:calc(8*var(--u));font-size:calc(12*var(--u));color:#e8e8e8;transition:color .3s}
 .f-links a .chev{width:calc(6*var(--u));height:calc(10*var(--u))}
 .f-links a:hover{color:var(--gold-l)}
@@ -333,41 +333,48 @@ body.nav-lock{overflow:hidden}
       </ul>
     </div>
 
-    <!-- collage — all coordinates are hero-grid units (1024 x 470), 60° cuts, ~10u white seams -->
-    <svg class="collage" viewBox="0 0 1024 470" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-      <defs>
-        <linearGradient id="gRed" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ea1840"/><stop offset="1" stop-color="#6e0615"/></linearGradient>
-        <linearGradient id="gBlk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3a3a"/><stop offset="1" stop-color="#000"/></linearGradient>
-        <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6512"/><stop offset=".45" stop-color="#e9c85c"/><stop offset=".6" stop-color="#fff0b0"/><stop offset="1" stop-color="#b8901f"/></linearGradient>
-        <linearGradient id="gGoldV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0b0"/><stop offset=".4" stop-color="#d4af37"/><stop offset="1" stop-color="#8a6512"/></linearGradient>
-        <clipPath id="kA"><polygon points="450,0 602,0 660,100 619,172 549,172"/></clipPath>
-        <clipPath id="kB"><polygon points="676,0 1024,0 1024,248 758,248 647,52"/></clipPath>
-        <clipPath id="kC"><polygon points="570,184 710,184 780,305 710,426 570,426 500,305"/></clipPath>
-        <clipPath id="kD"><polygon points="818,258 962,258 1024,365 1024,470 840,470 768,345"/></clipPath>
-        <clipPath id="kE"><polygon points="462,300 486,300 584,470 364,470"/></clipPath>
-      </defs>
+    <!-- collage — 1024 x 470 hero grid. Seams tightened to ~8–12u, bottom accents kept inside the hero,
+     left plate tile turned into a proper up-pointing triangle. -->
+<svg class="collage" viewBox="0 0 1024 470" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+  <defs>
+    <linearGradient id="gRed" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ea1840"/><stop offset="1" stop-color="#6e0615"/></linearGradient>
+    <linearGradient id="gBlk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3a3a"/><stop offset="1" stop-color="#000"/></linearGradient>
+    <linearGradient id="gGold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8a6512"/><stop offset=".45" stop-color="#e9c85c"/><stop offset=".6" stop-color="#fff0b0"/><stop offset="1" stop-color="#b8901f"/></linearGradient>
+    <linearGradient id="gGoldV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0b0"/><stop offset=".4" stop-color="#d4af37"/><stop offset="1" stop-color="#8a6512"/></linearGradient>
 
-      <!-- big gold light streak on the left edge of the collage -->
-      <polygon class="acc" points="384,0 440,0 548,196" fill="url(#gGoldV)"/>
+    <!-- A salmon (unchanged) -->
+    <clipPath id="kA"><polygon points="450,0 602,0 660,100 619,172 549,172"/></clipPath>
+    <!-- B platter: bottom edge lowered 248 → 252 -->
+    <clipPath id="kB"><polygon points="676,0 1024,0 1024,252 760,252 647,52"/></clipPath>
+    <!-- C shrimp hex: moved up 4u, same size -->
+    <clipPath id="kC"><polygon points="570,180 710,180 780,301 710,422 570,422 500,301"/></clipPath>
+    <!-- D chicken: top raised 258 → 262 gap now 10u -->
+    <clipPath id="kD"><polygon points="818,262 962,262 1024,369 1024,470 840,470 768,349"/></clipPath>
+    <!-- E plate: real triangle, sharp apex, hugs the hex -->
+    <clipPath id="kE"><polygon points="478,286 584,470 364,470"/></clipPath>
+  </defs>
 
-      <!-- photo tiles -->
-      <g class="pc" clip-path="url(#kA)"><image href="assets/images/home-img-3.jpeg"     x="450" y="0"   width="210" height="172" preserveAspectRatio="xMidYMid slice"/></g>
-      <g class="pc" clip-path="url(#kB)"><image href="assets/images/new-gallery-3.jpeg"  x="647" y="0"   width="377" height="248" preserveAspectRatio="xMidYMid slice"/></g>
-      <g class="pc" clip-path="url(#kC)"><image href="assets/images/new-gallery-4.jpeg"  x="500" y="184" width="280" height="242" preserveAspectRatio="xMidYMid slice"/></g>
-      <g class="pc" clip-path="url(#kD)"><image href="assets/images/new-gallery-5.jpeg"  x="768" y="258" width="256" height="212" preserveAspectRatio="xMidYMid slice"/></g>
-      <g class="pc" clip-path="url(#kE)"><image href="assets/images/home-img-2.jpeg"     x="364" y="300" width="220" height="170" preserveAspectRatio="xMidYMid slice"/></g>
+  <!-- gold light streak on the left edge of the collage -->
+  <polygon class="acc" points="384,0 440,0 548,196" fill="url(#gGoldV)"/>
 
-      <!-- accent triangles (red / black / gold) in the seams -->
-      <polygon class="acc" points="612,0 666,0 639,47"        fill="url(#gRed)"/>
-      <polygon class="acc" points="667,118 696,168 638,168"   fill="url(#gBlk)"/>
-      <!-- <polygon class="acc" points="434,292 492,292 463,240"   fill="url(#gGold)"/> -->
-      <polygon class="acc" points="768,262 806,262 787,295"   fill="url(#gGold)"/>
-      <polygon class="acc" points="972,258 1024,258 1024,348" fill="url(#gRed)"/>
-      <polygon class="acc" points="580,438 656,438 618,504"   fill="url(#gRed)"/>
-      <polygon class="acc" points="690,438 746,438 718,486"   fill="url(#gBlk)"/>
-      <polygon class="acc" points="768,470 826,470 797,420"   fill="url(#gGold)"/>
-      <polygon class="acc" points="940,470 1024,440 1024,470" fill="url(#gGold)"/>
-    </svg>
+  <!-- photo tiles -->
+  <g class="pc" clip-path="url(#kA)"><image href="assets/images/food-1.jpeg" x="450" y="0"   width="210" height="172" preserveAspectRatio="xMidYMid slice"/></g>
+  <g class="pc" clip-path="url(#kB)"><image href="assets/images/new-gallery-3.jpeg" x="647" y="0"   width="377" height="252" preserveAspectRatio="xMidYMid slice"/></g>
+  <g class="pc" clip-path="url(#kC)"><image href="assets/images/food-2.jpeg" x="500" y="180" width="280" height="242" preserveAspectRatio="xMidYMid slice"/></g>
+  <g class="pc" clip-path="url(#kD)"><image href="assets/images/food-4.jpeg" x="768" y="262" width="256" height="208" preserveAspectRatio="xMidYMid slice"/></g>
+  <g class="pc" clip-path="url(#kE)"><image href="assets/images/home-img-5.jpeg"    x="364" y="286" width="220" height="184" preserveAspectRatio="xMidYMid slice"/></g>
+
+  <!-- accent triangles in the seams -->
+  <polygon class="acc" points="612,0 666,0 639,47"         fill="url(#gRed)"/>
+  <polygon class="acc" points="668,104 705,174 626,174" fill="url(#gBlk)"></polygon>
+  <polygon class="acc" points="770,262 808,262 789,295"    fill="url(#gGold)"/>
+  <polygon class="acc" points="972,262 1024,262 1024,352"  fill="url(#gRed)"/>
+  <!-- bottom row now ends exactly at y=470 (no overflow / clipped tips) -->
+  <polygon class="acc" points="596,432 662,432 629,470"    fill="url(#gRed)"/>
+  <polygon class="acc" points="690,432 750,432 720,470"    fill="url(#gBlk)"/>
+  <polygon class="acc" points="752,480 830,472 762,353" fill="url(#gGold)"></polygon>
+  <polygon class="acc" points="940,470 1024,440 1024,470"  fill="url(#gGold)"/>
+</svg>
 
     <!-- bottom-left gold swoosh -->
     <svg class="hero-swoosh" viewBox="0 0 430 56" preserveAspectRatio="none" aria-hidden="true">
@@ -447,13 +454,13 @@ body.nav-lock{overflow:hidden}
     <div class="f-col f-links">
       <h4>Quick Links</h4>
       <ul>
-        <li><a href="index.html"><svg class="chev"><use href="#chev"/></svg>Home</a></li>
-        <li><a href="about.html"><svg class="chev"><use href="#chev"/></svg>About</a></li>
-        <li><a href="catering.html"><svg class="chev"><use href="#chev"/></svg>Catering</a></li>
-        <li><a href="catering.html#menu"><svg class="chev"><use href="#chev"/></svg>Menu</a></li>
-        <li><a href="gallery.html"><svg class="chev"><use href="#chev"/></svg>Gallery</a></li>
-        <li><a href="cooking-in-the-hood.html"><svg class="chev"><use href="#chev"/></svg>Cooking in the Hood</a></li>
-        <li><a href="contact.html"><svg class="chev"><use href="#chev"/></svg>Contact</a></li>
+        <li><a href="index.html"><i class="fa fa-angle-right"></i> Home</a></li>
+        <li><a href="about.html"><i class="fa fa-angle-right"></i> About</a></li>
+        <li><a href="catering.html"><i class="fa fa-angle-right"></i> Catering</a></li>
+        <li><a href="catering.html#menu"><i class="fa fa-angle-right"></i> Menu</a></li>
+        <li><a href="gallery.html"><i class="fa fa-angle-right"></i> Gallery</a></li>
+        <li><a href="cooking-in-the-hood.html"><i class="fa fa-angle-right"></i> Cooking in the Hood</a></li>
+        <li><a href="contact.html"><i class="fa fa-angle-right"></i> Contact</a></li>
       </ul>
     </div>
     <div class="f-col f-contact">
