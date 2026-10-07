@@ -13,7 +13,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 <style>
 /* =========================================================
-   CHEF JAY LeSOUL — HOME
+   CHEF JAY LeSOUL — HOME (v4) — hero rebuilt on a 1024 x 470 grid
+   --u  : site unit (1u = 1 mockup px, clamped)         — header, services, footer…
+   --hu : hero unit (1024hu = hero width, NOT clamped)  — hero only, so the hero
+          is the same picture at every viewport width (desktop & mobile alike)
    ========================================================= */
 :root{
   --u:clamp(.5px, calc(100vw / 1024), 1.6px);
@@ -85,7 +88,7 @@ body.nav-lock{overflow:hidden}
 /* =========================================================
    HERO — 1024 x 470 design grid. Everything inside uses --hu.
    ========================================================= */
-.hero-wrap{width:100%;container-type:inline-size;background: #fff}
+.hero-wrap{width:100%;container-type:inline-size}
 .hero{--hu:calc(100vw / 1024);position:relative;width:100%;height:calc(470*var(--hu));margin-top:var(--hh);overflow:hidden;
   /* white marble-ish background with soft diagonal light streaks */
   background:
@@ -202,28 +205,6 @@ body.nav-lock{overflow:hidden}
 .socials a:hover{transform:translateY(-3px) rotate(8deg)}
 .socials svg{width:58%;height:58%}
 
-/* ---- landscape frame ---- */
-.frame{position:relative;justify-self:end;width:100%;aspect-ratio:430/290}
-.frame-gold{position:absolute;inset:0;background:var(--goldgrad);clip-path:polygon(0 0,88% 0,100% 16%,100% 100%,12% 100%,0 84%);box-shadow:0 20px 50px rgba(0,0,0,.25)}
-.frame-img{position:absolute;inset:calc(5*var(--u));overflow:hidden;clip-path:polygon(0 0,88% 0,100% 16%,100% 100%,12% 100%,0 84%);background:#1b1b1b}
-.frame-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
-.frame:hover .frame-img img{transform:scale(1.04)}
-.p-acc{position:absolute;width:0;height:0;pointer-events:none}
-.p-red{top:calc(-16*var(--u));right:calc(0*var(--u));border-left:calc(32*var(--u)) solid transparent;border-right:calc(32*var(--u)) solid transparent;border-top:calc(56*var(--u)) solid #c8102e;filter:drop-shadow(0 6px 10px rgba(200,16,46,.35))}
-.p-blk{bottom:calc(-18*var(--u));right:calc(60*var(--u));border-left:calc(28*var(--u)) solid transparent;border-right:calc(28*var(--u)) solid transparent;border-top:calc(48*var(--u)) solid #111}
-.p-gold{top:calc(70*var(--u));left:calc(-24*var(--u));border-left:calc(20*var(--u)) solid transparent;border-right:calc(20*var(--u)) solid transparent;border-bottom:calc(34*var(--u)) solid #d4af37;filter:drop-shadow(0 4px 8px rgba(212,175,55,.4))}
-.badge{position:absolute;left:calc(-28*var(--u));bottom:calc(30*var(--u));display:flex;align-items:center;gap:calc(12*var(--u));padding:calc(12*var(--u)) calc(18*var(--u)) calc(12*var(--u)) calc(16*var(--u));background:linear-gradient(135deg,#1a1a1a,#060606);color:#fff;border-radius:calc(8*var(--u));box-shadow:inset 0 0 0 2px var(--gold),0 14px 30px rgba(0,0,0,.4);z-index:3}
-.badge b{font-family:var(--f-disp);font-weight:400;font-size:calc(40*var(--u));line-height:1;background:var(--goldgrad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.badge span{font-family:var(--f-head);font-weight:500;font-size:calc(13*var(--u));line-height:1.25;letter-spacing:.03em;text-transform:uppercase;max-width:calc(110*var(--u))}
-
-
-.d-lg-none {
-  display: none;
-}
-.d-lg-block {
-  display: block;
-}
-
 /* =========================================================
    RESPONSIVE  (the hero needs no rules here — it scales as one piece)
    ========================================================= */
@@ -285,15 +266,6 @@ body.nav-lock{overflow:hidden}
   .l-hat {
     margin-bottom: 2px;
     margin-left: -26px;
-  }
-  .d-none {
-    display: none;
-  }
-  .d-block {
-    display: block;
-  }
-  .hero {
-    --hu: calc(180cqw / 1024);
   }
 }
 </style>
@@ -364,7 +336,7 @@ body.nav-lock{overflow:hidden}
 
       <!-- collage — 1024 x 470 hero grid. Seams tightened to ~8–12u, bottom accents kept inside the hero,
        left plate tile turned into a proper up-pointing triangle. -->
-      <svg class="collage d-none d-lg-block" viewBox="0 0 1024 470" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <svg class="collage" viewBox="0 0 1024 470" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
         <defs>
           <linearGradient id="gRed" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ea1840"/><stop offset="1" stop-color="#6e0615"/></linearGradient>
           <linearGradient id="gBlk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a3a3a"/><stop offset="1" stop-color="#000"/></linearGradient>
@@ -406,19 +378,12 @@ body.nav-lock{overflow:hidden}
       </svg>
 
       <!-- bottom-left gold swoosh -->
-      <svg class="hero-swoosh d-none d-lg-block" viewBox="0 0 430 56" preserveAspectRatio="none" aria-hidden="true">
+      <svg class="hero-swoosh" viewBox="0 0 430 56" preserveAspectRatio="none" aria-hidden="true">
         <defs><linearGradient id="gSw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9a7418"/><stop offset=".35" stop-color="#e2bf52"/><stop offset=".6" stop-color="#fff2b3"/><stop offset="1" stop-color="#b8901f"/></linearGradient></defs>
         <path d="M0 56V20C120 38 290 46 430 56Z" fill="url(#gSw)"/>
         <path d="M0 14C130 32 300 42 430 54" fill="none" stroke="#fff6cc" stroke-width="2" opacity=".85"/>
       </svg>
 
-    </div>
-    <div class="frame reveal d-block d-lg-none" data-delay="150">
-      <span class="p-acc p-gold" aria-hidden="true"></span>
-      <div class="frame-gold"></div>
-      <div class="frame-img"><img src="assets/images/lamb-pic.jpeg" alt="Chef Jay LeSoul presenting a full catering spread"></div>
-      <span class="p-acc p-red" aria-hidden="true"></span>
-      <span class="p-acc p-blk" aria-hidden="true"></span>
     </div>
   </section>
 
@@ -453,7 +418,7 @@ body.nav-lock{overflow:hidden}
         <a href="gallery.html" class="f-card reveal" data-delay="60"><img src="assets/images/home-img-4.jpeg" alt="Seasoned grilled shrimp" loading="lazy"></a>
         <a href="gallery.html" class="f-card reveal" data-delay="120"><img src="assets/images/new-gallery-4.jpeg" alt="Shrimp with roasted potatoes and vegetables" loading="lazy"></a>
         <a href="gallery.html" class="f-card reveal" data-delay="180"><img src="assets/images/new-gallery-5.jpeg" alt="Chicken with peppers and onions" loading="lazy"></a>
-        <a href="gallery.html" class="f-card reveal" data-delay="240"><img src="assets/images/stack-with-other.jpeg" alt="Grilled steak dinner" loading="lazy"></a>
+        <a href="gallery.html" class="f-card reveal" data-delay="240"><img src="assets/images/new-gallery-6.jpeg" alt="Grilled steak dinner" loading="lazy"></a>
         <a href="gallery.html" class="f-card reveal" data-delay="300"><img src="assets/images/new-gallery-7.jpeg" alt="Fried chicken platter" loading="lazy"></a>
       </div>
     </div>
