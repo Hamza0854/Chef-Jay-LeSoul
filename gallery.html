@@ -111,10 +111,19 @@ body.nav-lock{overflow:hidden}
 .gallery-sec{background:#fff}
 .gallery-sec .stage{padding:calc(26*var(--u)) calc(22*var(--u)) calc(40*var(--u))}
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(10*var(--u))}
-.g-item{position:relative;display:block;aspect-ratio:1/1;border-radius:calc(3*var(--u));overflow:hidden;background:#eee;box-shadow:0 4px 12px rgba(0,0,0,.12);transition:transform .45s var(--ease),box-shadow .45s,opacity .5s var(--ease)}
+.g-item{position:relative;display:block;aspect-ratio:2/3;border-radius:calc(3*var(--u));overflow:hidden;background:#eee;box-shadow:0 4px 12px rgba(0,0,0,.12);transition:transform .45s var(--ease),box-shadow .45s,opacity .5s var(--ease)}
 .g-item:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(0,0,0,.2),inset 0 0 0 2px var(--gold)}
-.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
-.g-item:hover img{transform:scale(1.08)}
+/* blurred backdrop (added by script below) */
+.g-bg{position:absolute;inset:-25%;z-index:0;background-size:cover;background-position:center;
+  filter:blur(34px) brightness(.8) saturate(1.1);transform:scale(1.2);transition:transform .9s var(--ease)}
+.g-bg::after{content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at center,rgba(0,0,0,0) 45%,rgba(0,0,0,.35) 100%)}
+/* full, uncropped image on top */
+.g-item img{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;
+  filter:drop-shadow(0 0 14px rgba(0,0,0,.35)) drop-shadow(0 0 40px rgba(0,0,0,.45));
+  transition:transform .9s var(--ease)}
+.g-item:hover img{transform:scale(1.03)}
+.g-item:hover .g-bg{transform:scale(1.3)}
 /* gold/red corner cut, like the home accents */
 .g-item::before{content:"";position:absolute;top:0;right:0;width:calc(34*var(--u));height:calc(34*var(--u));background:var(--goldgrad);clip-path:polygon(100% 0,0 0,100% 100%);opacity:0;transition:opacity .4s;z-index:2}
 .g-item::after{content:"";position:absolute;top:0;right:0;width:calc(16*var(--u));height:calc(16*var(--u));background:var(--red);clip-path:polygon(100% 0,0 0,100% 100%);opacity:0;transition:opacity .4s;z-index:2}
@@ -336,27 +345,25 @@ body.nav-lock{overflow:hidden}
 <section class="gallery-sec">
   <div class="stage">
     <div class="gallery" id="gallery">
+      <a class="g-item" data-cat="flyers" href="assets/images/black-man.jpeg"><img src="assets/images/black-man.jpeg" alt="Chef Jay in the kitchen" loading="lazy"><span>Chef Jay Team</span></a>
       <a class="g-item" data-cat="team" href="assets/images/chef-jay-kitchen.jpg"><img src="assets/images/chef-jay-kitchen.jpg" alt="Chef Jay in the kitchen" loading="lazy"><span>Chef Jay in the kitchen</span></a>
+      <a class="g-item" data-cat="team" href="assets/images/chef-team-2.jpeg"><img src="assets/images/chef-team-2.jpeg" alt="Chef Jay in the kitchen" loading="lazy"><span>Chef Jay Team</span></a>
+      <a class="g-item" data-cat="team" href="assets/images/chef-team-1.jpeg"><img src="assets/images/chef-team-1.jpeg" alt="Chef Jay in the kitchen" loading="lazy"><span>Chef Jay Team</span></a>
       <a class="g-item" data-cat="food" href="assets/images/gallery-12.jpeg"><img src="assets/images/gallery-12.jpeg" alt="Fruit tray" loading="lazy"><span>Fruit tray</span></a>
-      <a class="g-item" data-cat="events" href="assets/images/gallery-img-5.jpeg"><img src="assets/images/gallery-img-5.jpeg" alt="Team serving the buffet line" loading="lazy"><span>Buffet service</span></a>
-      <a class="g-item" data-cat="flyers" href="assets/images/poster-1.jpeg"><img src="assets/images/poster-1.jpeg" alt="Cooking in the Hood flyer" loading="lazy"><span>Cooking in the Hood flyer</span></a>
-      <a class="g-item" data-cat="team" href="assets/images/hero-seasoning-pour.jpg"><img src="assets/images/hero-seasoning-pour.jpg" alt="Chef Jay pouring Black Crack Seasoning" loading="lazy"><span>Black Crack Seasoning</span></a>
-      <a class="g-item" data-cat="food" href="assets/images/home-img-1.jpeg"><img src="assets/images/home-img-1.jpeg" alt="Grilled salmon" loading="lazy"><span>Grilled salmon</span></a>
+      <a class="g-item" data-cat="team" href="assets/images/gallery-img-5.jpeg"><img src="assets/images/gallery-img-5.jpeg" alt="Team serving the buffet line" loading="lazy"><span>Buffet service</span></a>
+      <a class="g-item" data-cat="flyers" href="assets/images/home-img-1.jpeg"><img src="assets/images/home-img-1.jpeg" alt="Grilled salmon" loading="lazy"><span>Grilled salmon</span></a>
       <a class="g-item" data-cat="events" href="assets/images/private-dinner-1.jpeg"><img src="assets/images/private-dinner-1.jpeg" alt="Private dinner set outdoors" loading="lazy"><span>Private dining</span></a>
-      <a class="g-item" data-cat="team" href="assets/images/new-gallery-1.jpeg"><img src="assets/images/new-gallery-1.jpeg" alt="Chef Jay and a team member" loading="lazy"><span>The team</span></a>
       <a class="g-item" data-cat="food" href="assets/images/gallery-10.jpeg"><img src="assets/images/gallery-10.jpeg" alt="Fruit cups" loading="lazy"><span>Fruit cups</span></a>
       <a class="g-item" data-cat="events" href="assets/images/gallery-img-4.jpeg"><img src="assets/images/gallery-img-4.jpeg" alt="Chef Jay with volunteers" loading="lazy"><span>Community event</span></a>
-      <a class="g-item" data-cat="flyers" href="assets/images/poster-2.jpeg"><img src="assets/images/poster-2.jpeg" alt="Catering flyer" loading="lazy"><span>Catering flyer</span></a>
-      <a class="g-item" data-cat="team" href="assets/images/gallery-img-2.jpeg"><img src="assets/images/gallery-img-2.jpeg" alt="Chef Jay with guests" loading="lazy"><span>Chef Jay with guests</span></a>
+      <a class="g-item" data-cat="events" href="assets/images/gallery-img-2.jpeg"><img src="assets/images/gallery-img-2.jpeg" alt="Chef Jay with guests" loading="lazy"><span>Chef Jay with guests</span></a>
       <a class="g-item" data-cat="food" href="assets/images/gallery-14.jpeg"><img src="assets/images/gallery-14.jpeg" alt="Fruit display" loading="lazy"><span>Fruit display</span></a>
-      <a class="g-item" data-cat="events" href="assets/images/new-gallery-5.jpeg"><img src="assets/images/new-gallery-5.jpeg" alt="Outdoor private dinner" loading="lazy"><span>Outdoor dinner</span></a>
-      <a class="g-item" data-cat="team" href="assets/images/black-crack-bottle.jpg"><img src="assets/images/black-crack-bottle.jpg" alt="Chef Jay with Black Crack Seasoning" loading="lazy"><span>Home of Black Crack</span></a>
+      <a class="g-item" data-cat="food" href="assets/images/new-gallery-5.jpeg"><img src="assets/images/new-gallery-5.jpeg" alt="Outdoor private dinner" loading="lazy"><span>Outdoor dinner</span></a>
       <a class="g-item" data-cat="food" href="assets/images/The-Seasoning.avif"><img src="assets/images/The-Seasoning.avif" alt="Black Crack Seasoning close-up" loading="lazy"><span>The seasoning</span></a>
-      <a class="g-item" data-cat="events" href="assets/images/gallery-img-1.jpeg"><img src="assets/images/gallery-img-1.jpeg" alt="Chef Jay with community members" loading="lazy"><span>On the block</span></a>
+      <a class="g-item" data-cat="team" href="assets/images/gallery-img-1.jpeg"><img src="assets/images/gallery-img-1.jpeg" alt="Chef Jay with community members" loading="lazy"><span>On the block</span></a>
       <a class="g-item" data-cat="flyers" href="assets/images/poster-3.jpeg"><img src="assets/images/poster-3.jpeg" alt="Event flyer" loading="lazy"><span>Event flyer</span></a>
-      <a class="g-item" data-cat="team" href="assets/images/new-gallery-6.jpeg"><img src="assets/images/new-gallery-6.jpeg" alt="Team member with plated entrées" loading="lazy"><span>Plated &amp; ready</span></a>
+      <a class="g-item" data-cat="food" href="assets/images/new-gallery-6.jpeg"><img src="assets/images/new-gallery-6.jpeg" alt="Team member with plated entrées" loading="lazy"><span>Plated &amp; ready</span></a>
       <a class="g-item" data-cat="food" href="assets/images/gallery-15.jpeg"><img src="assets/images/gallery-15.jpeg" alt="Veggie tray" loading="lazy"><span>Veggie tray</span></a>
-      <a class="g-item" data-cat="events" href="assets/images/new-gallery-3.jpeg"><img src="assets/images/new-gallery-3.jpeg" alt="Guests at an event" loading="lazy"><span>Guests at an event</span></a>
+      <a class="g-item" data-cat="food" href="assets/images/new-gallery-3.jpeg"><img src="assets/images/new-gallery-3.jpeg" alt="Guests at an event" loading="lazy"><span>Guests at an event</span></a>
       <a class="g-item" data-cat="team" href="assets/images/gallery-img-6.jpeg"><img src="assets/images/gallery-img-6.jpeg" alt="Server presenting dishes" loading="lazy"><span>Service with a smile</span></a>
       <a class="g-item" data-cat="food" href="assets/images/new-gallery-7.jpeg"><img src="assets/images/new-gallery-7.jpeg" alt="Fried chicken platter" loading="lazy"><span>Fried chicken</span></a>
       <a class="g-item" data-cat="events" href="assets/images/gallery-img-8.jpeg"><img src="assets/images/gallery-img-8.jpeg" alt="Chef Jay and the team at an event" loading="lazy"><span>Event day</span></a>
@@ -364,13 +371,16 @@ body.nav-lock{overflow:hidden}
       <a class="g-item" data-cat="events" href="assets/images/private-dinner-2.jpeg"><img src="assets/images/private-dinner-2.jpeg" alt="Guests at a private dinner" loading="lazy"><span>Private dinner</span></a>
       <a class="g-item" data-cat="food" href="assets/images/video-1.png"><img src="assets/images/video-1.png" alt="Fresh off the grill" loading="lazy"><span>Fresh off the grill</span></a>
       <a class="g-item" data-cat="team" href="assets/images/gallery-img-7.jpeg"><img src="assets/images/gallery-img-7.jpeg" alt="Chef Jay and guest with plated food" loading="lazy"><span>Chef Jay &amp; guest</span></a>
-      <a class="g-item" data-cat="events" href="assets/images/new-gallery-4.jpeg"><img src="assets/images/new-gallery-4.jpeg" alt="Server with catering trays" loading="lazy"><span>Catering trays</span></a>
+      <a class="g-item" data-cat="food" href="assets/images/new-gallery-4.jpeg"><img src="assets/images/new-gallery-4.jpeg" alt="Server with catering trays" loading="lazy"><span>Catering trays</span></a>
       <a class="g-item" data-cat="food" href="assets/images/video-2.png"><img src="assets/images/video-2.png" alt="Trays out of the kitchen" loading="lazy"><span>Out of the kitchen</span></a>
-      <a class="g-item" data-cat="team" href="assets/images/gallery-img-9.jpeg"><img src="assets/images/gallery-img-9.jpeg" alt="Chef Jay serving guests" loading="lazy"><span>Serving guests</span></a>
-      <a class="g-item" data-cat="events" href="assets/images/new-gallery-2.jpeg"><img src="assets/images/new-gallery-2.jpeg" alt="Chef Jay beside a fruit display" loading="lazy"><span>Fruit display setup</span></a>
+      <a class="g-item" data-cat="events" href="assets/images/gallery-img-9.jpeg"><img src="assets/images/gallery-img-9.jpeg" alt="Chef Jay serving guests" loading="lazy"><span>Serving guests</span></a>
+      <a class="g-item" data-cat="food" href="assets/images/new-gallery-2.jpeg"><img src="assets/images/new-gallery-2.jpeg" alt="Chef Jay beside a fruit display" loading="lazy"><span>Fruit display setup</span></a>
       <a class="g-item" data-cat="flyers" href="assets/images/poster-5.jpeg"><img src="assets/images/poster-5.jpeg" alt="Catering flyer" loading="lazy"><span>Catering flyer</span></a>
       <a class="g-item" data-cat="flyers" href="assets/images/1000144671.jpg"><img src="assets/images/1000144671.jpg" alt="Chef Jay feature" loading="lazy"><span>Chef Jay LeSoul</span></a>
-      <a class="g-item" data-cat="food" href="assets/images/black-crack.png"><img src="assets/images/black-crack.png" alt="Black Crack Seasoning bottle" loading="lazy"><span>Black Crack Seasoning</span></a>
+      <!-- <a class="g-item" data-cat="food" href="assets/images/black-crack.png"><img src="assets/images/black-crack.png" alt="Black Crack Seasoning bottle" loading="lazy"><span>Black Crack Seasoning</span></a> -->
+      <a class="g-item" data-cat="flyers" href="assets/images/poster-1.jpeg"><img src="assets/images/poster-1.jpeg" alt="Cooking in the Hood flyer" loading="lazy"><span>Cooking in the Hood flyer</span></a>
+      <a class="g-item" data-cat="events" href="assets/images/chef-team-1.jpeg"><img src="assets/images/chef-team-1.jpeg" alt="Chef Jay in the kitchen" loading="lazy"><span>Chef Jay Team</span></a>
+
     </div>
   </div>
 </section>
@@ -432,6 +442,14 @@ body.nav-lock{overflow:hidden}
 </footer>
 
 <a href="#" class="to-top" id="toTop" aria-label="Back to top">↑</a>
+<script>
+  document.querySelectorAll('#gallery .g-item').forEach(function(a){
+    var bg=document.createElement('div');
+    bg.className='g-bg';
+    bg.style.backgroundImage='url("'+a.getAttribute('href')+'")';
+    a.prepend(bg);
+  });
+</script>
 <script src="assets/js/script.js"></script>
 </body>
 </html>
